@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="game_screen">
+            <div class="currencies">
+                <div class="currency_title">Gold<div class="currency" id="currency_money">0</div></div>
+                <div class="currency_title">Food<div class="currency" id="currency_food">0</div></div>
+                <div class="currency_title">Housing<div class="currency" id="currency_housing">0</div></div>
+                <div class="currency_title">Steel<div class="currency" id="currency_metal">0</div></div>
+                <div class="currency_title">Plastics<div class="currency" id="currency_plastics">0</div></div>
+                <div class="currency_title">Wood<div class="currency" id="currency_wood">0</div></div>
+                <div class="currency_title">Electronics<div class="currency" id="currency_electronics">0</div></div>
+                <div class="currency_title">Intelligence<div class="currency" id="currency_intelligence">0</div></div>
+                <div class="currency_title">Moral<div class="currency" id="currency_moral">0</div></div>
+            </div>
+            <div class="object object_div object_peasant">
+                <div class="object_content" id="object_peasant">
+                    Citizen: <span class="amount" id="amount_object_peasant">0</span>
+                    <div class="buy_info" id="buildcost_object_peasant"></div>
+                    <div class="buy_info" id="adds_object_peasant"></div>
+                    <div class="buy_info" id="adds_per_tick_object_peasant"></div>
+                    <br />
+                    <button onclick="buyClick('object_peasant')" class="button buy" id="buy_object_peasant">Welcome Citizen</button>
+                </div>
+            </div>
+            <div class="object object_div object_farmer">
+                <div class="object_content" id="object_farmer">
+                    Farmers: <span class="amount" id="amount_object_farmer">0</span>
+                    <div class="buy_info" id="buildcost_object_farmer"></div>
+                    <div class="buy_info" id="adds_object_farmer"></div>
+                    <div class="buy_info" id="adds_per_tick_object_farmer"></div>
+                    <br />
+                    <button onclick="buyClick('object_farmer') "class="button buy" id="buy_object_farmer">Train farmer</button>
+                </div>
+            </div>
+            <div class="object object_div object_soldier">
+                <div class="object_content" id="object_soldier">
+                    Soldiers: <span class="amount" id="amount_object_soldier">0</span>
+                    <div class="buy_info" id="buildcost_object_soldier"></div>
+                    <div class="buy_info" id="adds_object_soldier"></div>
+                    <div class="buy_info" id="adds_per_tick_object_soldier"></div>
+                    <br />
+                    <button onclick="buyClick('object_soldier')" class="button buy" id="buy_object_soldier">Train soldier</button>
+                </div>
+            </div>
+            <div class="object object_div object_house">
+                <div class="object_content" id="object_house">
+                    Houses: <span class="amount" id="amount_object_house">0</span>
+                    <div class="buy_info" id="buildcost_object_house"></div>
+                    <div class="buy_info" id="adds_object_house"></div>
+                    <div class="buy_info" id="adds_per_tick_house"></div>
+                    <br />
+                    <button onclick="buyClick('object_house')" class="button buy" id="buy_object_house">Build house</button>
+                </div>
+            </div>
+        </div>
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>
