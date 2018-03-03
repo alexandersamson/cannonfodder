@@ -290,10 +290,16 @@ textarea {
     }
 }
 
+.game_screen{
+    margin-top:42px;
+}
 .currencies{
+    position: fixed;
+    top:0;
+    left: 0;
     display:block;
     float: left;
-    width: 660px;
+    width: 680px;
     overflow:hidden;
     margin-bottom:20px;
 }
@@ -301,7 +307,7 @@ textarea {
 .currency_title{
     display:block;
     float: left;
-    min-width:50px;
+    min-width:54px;
     padding:10px;
     font-size: 10px;
     font-family: Verdana, sans-serif;
@@ -325,6 +331,18 @@ textarea {
     display:block;
     margin-top:10px;
 }
+
+.object_title{
+    display:block;
+    width:100%;
+    float: left;
+    padding:2px;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+    background-color: #DDDDDD;
+    text-align: left;
+}
+
 .object_div{
     font-size: 12px;
     font-family: Verdana, sans-serif;
@@ -332,14 +350,14 @@ textarea {
     border-style: solid;
     border-color: #555555;
     background-color: #cccccc;
-    width: 640px;
+    width: 658px;
     left: 5%;
-    height:120px;
     padding:5px;
 }
 
 .object_content{
     float:left;
+    width: 100%;
 }
 
 .object_peasant{
@@ -353,11 +371,62 @@ textarea {
 }
 
 .buy_info{
-    display:block;
+    display:inline-block;
     float:left;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #555599;
+    border-width: 0px;
+    background-color: azure;
+    padding:3px;
+    margin: 3px;
     font-size: 10px;
     font-family: Verdana, sans-serif;
+}
+
+.object_info{
+    display:inline-block;
+    float:left;
+    border-width: 0px;
+    background-color: ghostwhite;
+    padding:3px;
+    margin: 3px;
+    font-size: 10px;
+    width:300px;
+    font-family: Verdana, sans-serif;
+}
+
+.object_btn_group{
+    display:block;
+    width:100%;
+    float: left;
+    padding:2px;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+    background-color: #DDDDDD;
+    text-align: left;
+}
+
+.button{
+    float:left;
+    font-family: Verdana, sans-serif;
+    background-color: ghostwhite;
+}
+.button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.buy{
+    padding:6px;
+    color: darkgreen;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.upgrade{
+    padding-top:1px;
+    padding-bottom:2px;
+    padding-left:6px;
+    padding-righ:6px;
+    color:darkblue;
+    font-weight: bold;
+    font-size: 10px;
 }

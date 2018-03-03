@@ -20,9 +20,9 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div id="game_screen">
+        <div class="game_screen" id="game_screen">
             <div class="currencies">
-                <div class="currency_title">Gold<div class="currency" id="currency_money">0</div></div>
+                <div class="currency_title">Money<div class="currency" id="currency_money">0</div></div>
                 <div class="currency_title">Food<div class="currency" id="currency_food">0</div></div>
                 <div class="currency_title">Housing<div class="currency" id="currency_housing">0</div></div>
                 <div class="currency_title">Steel<div class="currency" id="currency_metal">0</div></div>
@@ -32,44 +32,122 @@
                 <div class="currency_title">Intelligence<div class="currency" id="currency_intelligence">0</div></div>
                 <div class="currency_title">Moral<div class="currency" id="currency_moral">0</div></div>
             </div>
+            <div class="object object_div object_house">
+                <div class="object_content" id="object_house">
+                    <div class="object_title">Houses: <span class="amount" id="amount_object_house">0</span></div>
+                    <div class="buy_info" id="buildcost_object_house"></div>
+                    <div class="buy_info" id="adds_object_house"></div>
+                    <div class="buy_info" id="adds_per_tick_house"></div>
+                    <div class="object_info" id="info_house">Home sweet home. I may be built from just money, I'm still well isolated.</div>
+                    <br />
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_house')" class="button buy" id="buy_object_house">Build house</button>
+                    </div>
+                </div>
+            </div>
             <div class="object object_div object_peasant">
                 <div class="object_content" id="object_peasant">
-                    Citizen: <span class="amount" id="amount_object_peasant">0</span>
+                    <div class="object_title">Citizen: <span class="amount" id="amount_object_peasant">0</span></div>
                     <div class="buy_info" id="buildcost_object_peasant"></div>
                     <div class="buy_info" id="adds_object_peasant"></div>
                     <div class="buy_info" id="adds_per_tick_object_peasant"></div>
+                    <div class="object_info" id="info_peasant">They bring their own house and food along and they pay taxes. Gen pop. Sheeple. Sleepers. Whatever you want to call them.</div>
                     <br />
-                    <button onclick="buyClick('object_peasant')" class="button buy" id="buy_object_peasant">Welcome Citizen</button>
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_peasant')" class="button buy" id="buy_object_peasant">Welcome Citizen</button>
+                        <button onclick="upgradeClick('increase_taxes')" class="button upgrade" id="increase_taxes">Increase taxes<br>(500 moral)</button>
+                    </div>
                 </div>
             </div>
             <div class="object object_div object_farmer">
                 <div class="object_content" id="object_farmer">
-                    Farmers: <span class="amount" id="amount_object_farmer">0</span>
+                    <div class="object_title">Farmers: <span class="amount" id="amount_object_farmer">0</span></div>
                     <div class="buy_info" id="buildcost_object_farmer"></div>
                     <div class="buy_info" id="adds_object_farmer"></div>
                     <div class="buy_info" id="adds_per_tick_object_farmer"></div>
+                    <div class="object_info" id="info_farmer">Without food there is noone willing to do the hard work for you.</div>
                     <br />
-                    <button onclick="buyClick('object_farmer') "class="button buy" id="buy_object_farmer">Train farmer</button>
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_farmer') "class="button buy" id="buy_object_farmer">Train farmer</button>
+                    </div>
                 </div>
             </div>
-            <div class="object object_div object_soldier">
-                <div class="object_content" id="object_soldier">
-                    Soldiers: <span class="amount" id="amount_object_soldier">0</span>
-                    <div class="buy_info" id="buildcost_object_soldier"></div>
-                    <div class="buy_info" id="adds_object_soldier"></div>
-                    <div class="buy_info" id="adds_per_tick_object_soldier"></div>
+            <div class="object object_div object_woodchopper">
+                <div class="object_content" id="object_woodchopper">
+                    <div class="object_title">Wood choppers: <span class="amount" id="amount_object_woodchopper">0</span></div>
+                    <div class="buy_info" id="buildcost_object_woodchopper"></div>
+                    <div class="buy_info" id="adds_object_woodchopper"></div>
+                    <div class="buy_info" id="adds_per_tick_object_woodchopper"></div>
+                    <div class="object_info" id="info_woodchopper">These guys know how to swing an axe. Be careful they don't swing it towards you.</div>
                     <br />
-                    <button onclick="buyClick('object_soldier')" class="button buy" id="buy_object_soldier">Train soldier</button>
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_woodchopper') "class="button buy" id="buy_object_woodchopper">Train wood chopper</button>
+                    </div>
                 </div>
             </div>
-            <div class="object object_div object_house">
-                <div class="object_content" id="object_house">
-                    Houses: <span class="amount" id="amount_object_house">0</span>
-                    <div class="buy_info" id="buildcost_object_house"></div>
-                    <div class="buy_info" id="adds_object_house"></div>
-                    <div class="buy_info" id="adds_per_tick_house"></div>
+            <div class="object object_div object_ironminer">
+                <div class="object_content" id="object_ironminer">
+                    <div class="object_title">Iron miners: <span class="amount" id="amount_object_ironminer">0</span></div>
+                    <div class="buy_info" id="buildcost_object_ironminer"></div>
+                    <div class="buy_info" id="adds_object_ironminer"></div>
+                    <div class="buy_info" id="adds_per_tick_object_ironminer"></div>
+                    <div class="object_info" id="info_ironminer">These guys like to be in deep dark holes. To mine iron. Obviously.</div>
                     <br />
-                    <button onclick="buyClick('object_house')" class="button buy" id="buy_object_house">Build house</button>
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_ironminer') "class="button buy" id="buy_object_ironminer">Train iron miner</button>
+                    </div>
+                </div>
+            </div>
+            <div class="object object_div object_servant">
+                <div class="object_content" id="object_servant">
+                    <div class="object_title">Civil servants: <span class="amount" id="amount_object_servant">0</span></div>
+                    <div class="buy_info" id="buildcost_object_servant"></div>
+                    <div class="buy_info" id="adds_object_servant"></div>
+                    <div class="buy_info" id="adds_per_tick_object_servant"></div>
+                    <div class="object_info" id="info_servant">The know how to make a cup of barely drinkable coffee.</div>
+                    <br />
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_servant')" class="button buy" id="buy_object_servant">Train civil servant</button>
+                    </div>
+                </div>
+            </div>
+            <div class="object object_div object_scrapper">
+                <div class="object_content" id="object_scrapper">
+                    <div class="object_title">Scrappers: <span class="amount" id="amount_object_scrapper">0</span></div>
+                    <div class="buy_info" id="buildcost_object_scrapper"></div>
+                    <div class="buy_info" id="adds_object_scrapper"></div>
+                    <div class="buy_info" id="adds_per_tick_object_scrapper"></div>
+                    <div class="object_info" id="info_scrapper">He smells like shit, but brings home a lot of resources. But yeah, that's where you will pay for. Good thing is: They sleep at the dump yard.</div>
+                    <br />
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_scrapper')" class="button buy" id="buy_object_scrapper">Train scrapper</button>
+                    </div>
+                </div>
+            </div>
+            <div class="object object_div object_scientist">
+                <div class="object_content" id="object_scientist">
+                    <div class="object_title">Scientists: <span class="amount" id="amount_object_scientist">0</span></div>
+                    <div class="buy_info" id="buildcost_object_scientist"></div>
+                    <div class="buy_info" id="adds_object_scientist"></div>
+                    <div class="buy_info" id="adds_per_tick_object_scientist"></div>
+                    <div class="object_info" id="info_scientist">Socially awkward, but smarter than one stone. They do ransack your wallet though.</div>
+                    <br />
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_scientist')" class="button buy" id="buy_object_scientist">Train scientist</button>
+                    </div>
+                </div>
+            </div>
+            <div class="object object_div object_lighttank">
+                <div class="object_content" id="object_lighttank">
+                    <div class="object_title">Light tanks: <span class="amount" id="amount_object_lighttank">0</span></div>
+                    <div class="buy_info" id="buildcost_object_lighttank"></div>
+                    <div class="buy_info" id="adds_object_lighttank"></div>
+                    <div class="buy_info" id="adds_per_tick_object_lighttank"></div>
+                    <div class="object_info" id="info_lighttank">Tank you. [Combat vehicle]</div>
+                    <br />
+                    <div class="object_btn_group">
+                        <button onclick="buyClick('object_lighttank')" class="button buy" id="buy_object_lighttank">Build light tank</button>
+                    </div>
                 </div>
             </div>
         </div>
