@@ -290,26 +290,42 @@ textarea {
     }
 }
 
+.wrappywrapper{
+    display:block;
+    text-align:center;
+    width:100%;
+    top:0;
+    left:0;
+    position: absolute;
+}
+
 .game_screen{
-    margin-top:42px;
+    margin-top:0px;
+    margin-left:0px;
+    display: inline-block;
 }
 .currencies{
-    position: fixed;
     top:0;
     left: 0;
     display:block;
     float: left;
-    width: 800px;
+    width: 100%;
     overflow:hidden;
-    margin-bottom:20px;
+    margin-bottom:4px;
+    z-index: 2;
 }
 
 .currency_title{
     display:block;
     float: left;
-    min-width:80px;
+    width:10%;
+    min-width: 82px;
     padding-bottom:6px;
     padding-top:6px;
+    padding-left:3px;
+    padding-right:3px;
+    margin-left: -3px;
+    margin-right: -3px;
     font-size: 10px;
     font-family: Verdana, sans-serif;
     background-color: #cccccc;
@@ -328,25 +344,23 @@ textarea {
 }
 
 .object{
-    font-size: 12px;
-    font-family: Verdana, sans-serif;
     display:none;
-    margin-top:0px;
     visibility: hidden;
     height:0;
 }
 
-.buyable{
+.visible{
     display: block;
     float: left;
-    border-width: 1px;
-    border-style: solid;
+    border-width: 0;
+    border-style: none;
     border-color: #555555;
+    border-radius: 5px;
     background-color: #cccccc;
-    width: 788px;
-    left: 5%;
-    padding:5px;
+    width: 94%;
+    padding:7px;
     margin-top:10px;
+    margin-left:10px;
     visibility: visible;
     height:auto;
 }
@@ -356,29 +370,13 @@ textarea {
     width:100%;
     float: left;
     padding:2px;
+    margin-right: -4px;
     font-size: 10px;
     font-family: Verdana, sans-serif;
     background-color: #DDDDDD;
     text-align: left;
 }
 
-.object_div{
-}
-
-.object_content{
-    float:left;
-    width: 100%;
-}
-
-.object_peasant{
-    visibility: visible;
-}
-.object_farmer{
-    visibility: visible;
-}
-.object_soldier{
-    visibility: visible;
-}
 
 .buy_info{
     display:inline-block;
@@ -415,10 +413,17 @@ textarea {
 }
 
 .button{
+    height: 40px;
     float:left;
     font-family: Verdana, sans-serif;
     background-color: ghostwhite;
     margin-left:5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    box-shadow: none;
 }
 .button:hover{
     opacity: 0.5;
@@ -426,6 +431,7 @@ textarea {
 }
 
 .buy{
+    background-color: #ddeedd;
     padding:6px;
     color: darkgreen;
     font-weight: bold;
@@ -434,20 +440,18 @@ textarea {
 
 .autobuy{
     padding:6px;
-    color: darkgreen;
+    color: #88aa88;
     font-weight: bold;
     font-size: 12px;
 }
-
 .autobuy_active{
     background-color: lightgreen;
+    color: darkgreen;
+    box-shadow: lightgreen 0 0 6px 2px;
 }
 
 .upgrade{
-    padding-top:1px;
-    padding-bottom:2px;
-    padding-left:6px;
-    padding-righ:6px;
+    background-color: #ddddee;
     color:darkblue;
     font-weight: bold;
     font-size: 10px;
