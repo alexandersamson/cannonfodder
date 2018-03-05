@@ -1337,6 +1337,7 @@ function buyClick(objectName, times){
         if (objects[objectName]["consumes"] !== "none") {
             objects[objects[objectName]["consumes"]]["owned"] -= 1;
         }
+        setAdaptiveBuildPrices();
     }
 }
 

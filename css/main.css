@@ -300,11 +300,12 @@ textarea {
 }
 
 .game_screen{
-    margin-top:0px;
+    margin-top:40px;
     margin-left:0px;
     display: inline-block;
 }
 .currencies{
+    position: fixed;
     top:0;
     left: 0;
     display:block;
