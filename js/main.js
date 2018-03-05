@@ -1,4 +1,4 @@
-var versioning = {"version":"B03","build":1};
+var versioning = {"version":"B04","build":1};
 
 var player_currency = {
     "money"         : 0,
@@ -8,7 +8,7 @@ var player_currency = {
     "plastics"      : 0,
     "wood"          : 0,
     "electronics"   : 0,
-    "intelligence"  : 24000,
+    "intelligence"  : 0,
     "moral"         : 1,
     "firepower"     : 0
 };
