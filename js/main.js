@@ -1339,7 +1339,7 @@ var autobuyer = {"object":"none","rate":1,"counter_set":10,"counter_value":0,"si
 var autoSaveCounter = 0;
 var housingAdded = 0;
 
-// set interval
+
 
 loadWebstorage();
 buildupGameScreen();
