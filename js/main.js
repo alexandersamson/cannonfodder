@@ -1612,18 +1612,20 @@ function updateObjectBuildcost(){
                         }
                     }
                     if (objects[objectName]["adds_"+key] > 0) {
+                        var addsCurrency = "#adds_" + objectName;
                         if(addsSet === 0){
-                            $( "#adds_" + objectName ).html('Adds:<br />');
+                            $( addsCurrency ).html('Adds:<br />');
                             addsSet = 1;
                         }
-                        $("#adds_" + objectName).append(objects[objectName]["adds_"+key] + " " + player_currency_names[key] + "<br />");
+                        $( addsCurrency ).append(objects[objectName]["adds_"+key] + " " + player_currency_names[key] + "<br />");
                     }
                     if (objects[objectName]["adds_tick_"+key] > 0) {
+                        var addsTickCurrency = "#adds_per_tick_" + objectName;
                         if(addsTickSet === 0){
-                            $( "#adds_per_tick_" + objectName ).html('Adds per second:<br />');
+                            $( addsTickCurrency ).html('Adds per second:<br />');
                             addsTickSet = 1;
                         }
-                        $("#adds_per_tick_" + objectName).append((objects[objectName]["adds_tick_"+key]*10).toFixed(2) + " " + player_currency_names[key] + "<br />");
+                        $( addsTickCurrency ).append((objects[objectName]["adds_tick_"+key]*10).toFixed(2) + " " + player_currency_names[key] + "<br />");
                     }
                 }
             }
