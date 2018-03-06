@@ -1,4 +1,4 @@
-var versioning = {"version":"B05","build":5,"contact":"Alexander Samson - alexander@gm7.nl"};
+var versioning = {"version":"B06","build":1,"contact":"Alexander Samson - alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
@@ -112,6 +112,98 @@ var objects = {"object_headquarters": {
         "speed": 0,
         "buildspeed": 1,
         "consumes": "none"
+    },"object_clandestineoperations": {
+        "name":"Clandestine Operations facility",
+        "build_text":"Open Clandestine ops facility",
+        "amount_text":"Clandestine Operations facilities",
+        "buyable":false,
+        "visible":false,
+        "requires":"none",
+        "requires_amount":0,
+        "requires_research":"enable_clandestineoperations",
+        "requires_research_level":1,
+        "owned":1,
+        "money": 0,
+        "food": 0,
+        "housing": 0,
+        "metal": 0,
+        "plastics": 0,
+        "wood": 0,
+        "electronics": 0,
+        "intelligence": 0,
+        "moral": 0,
+        "firepower":0,
+        "adds_money": 0,
+        "adds_food": 0,
+        "adds_housing": 0,
+        "adds_metal": 0,
+        "adds_plastics": 0,
+        "adds_wood": 0,
+        "adds_electronics": 0,
+        "adds_intelligence": 0,
+        "adds_moral": 0,
+        "adds_firepower":0,
+        "adds_tick_money": 0,
+        "adds_tick_food": 0,
+        "adds_tick_housing": 0,
+        "adds_tick_metal": 0,
+        "adds_tick_plastics": 0,
+        "adds_tick_wood": 0,
+        "adds_tick_electronics": 0,
+        "adds_tick_intelligence": 0,
+        "adds_tick_moral": 0,
+        "adds_tick_firepower":0,
+        "hitpoints": 5000,
+        "damage": 0,
+        "speed": 0,
+        "buildspeed": 1,
+        "consumes": "none"
+    },"object_humantrafficking": {
+        "name":"Traffic humans",
+        "build_text":"Traffic citizen",
+        "amount_text":"Citizens trafficked",
+        "buyable":true,
+        "visible":false,
+        "requires":"object_clandestineoperations",
+        "requires_amount":1,
+        "requires_research":"none",
+        "requires_research_level":1,
+        "owned":0,
+        "money": 0,
+        "food": 0,
+        "housing": 0,
+        "metal": 0,
+        "plastics": 0,
+        "wood": 0,
+        "electronics": 0,
+        "intelligence": 0,
+        "moral": 100,
+        "firepower":0,
+        "adds_money": 1000000,
+        "adds_food": 0,
+        "adds_housing": 0,
+        "adds_metal": 0,
+        "adds_plastics": 0,
+        "adds_wood": 0,
+        "adds_electronics": 0,
+        "adds_intelligence": 0,
+        "adds_moral": 0,
+        "adds_firepower":0,
+        "adds_tick_money": 0,
+        "adds_tick_food": 0,
+        "adds_tick_housing": 0,
+        "adds_tick_metal": 0,
+        "adds_tick_plastics": 0,
+        "adds_tick_wood": 0,
+        "adds_tick_electronics": 0,
+        "adds_tick_intelligence": 0,
+        "adds_tick_moral": 0,
+        "adds_tick_firepower":0,
+        "hitpoints": 5000,
+        "damage": 0,
+        "speed": 0,
+        "buildspeed": 1,
+        "consumes": "object_peasant"
     },"object_researchfacility": {
         "name":"Research facility",
         "build_text":"Build research facility",
@@ -961,8 +1053,10 @@ objects_descriptions = {
     "object_sergeant":"Sir, yes sir!",
     "object_lieutenant":"I don't even know myself why I've added this annoying-to-spell rank",
     "object_colonel":"Hey yo Captain Jack, Bring me back to the railroad track... Oh, wait. I'm sorry colonel!",
-    "object_lighttank":"Tank you."
-}
+    "object_lighttank":"Tank you.",
+    "object_clandestineoperations":"You should not even know what happens behind the curtains, you, sheep.",
+    "object_humantrafficking":"This is sooo bad, but the money is sooo good. <br>Human trafficking still exists and it is <b>really bad shit</b>. Please do enjoy this game, but also consider donating to charities, like: https://www.stopthetraffik.org/donate/"
+};
 
 var upgrades= {
     "teach_farming":{
@@ -1190,6 +1284,36 @@ var upgrades= {
         "cost_amount":9500000,
         "current_level":0,
         "max_level":1},
+    "enable_clandestineoperations":{
+        "name":"Open Clandestine Ops. facility",
+        "button_placement":"object_headquarters",
+        "available":true,
+        "affected_object":"object_clandestineoperations",
+        "add_type":"none",
+        "add_amount":0,
+        "set_value":"visible",
+        "set_amount":true,
+        "cost":"moral",
+        "cost_amount_base":5000,
+        "cost_level_increment_power":3,
+        "cost_amount":57500,
+        "current_level":0,
+        "max_level":1},
+    "enforce_better_deal":{
+        "name":"Enforce better deal",
+        "button_placement":"object_humantrafficking",
+        "available":true,
+        "affected_object":"object_humantrafficking",
+        "add_type":"adds_money",
+        "add_amount":19000000,
+        "set_value":"none",
+        "set_amount":true,
+        "cost":"firepower",
+        "cost_amount_base":5000,
+        "cost_level_increment_power":3,
+        "cost_amount":200000,
+        "current_level":0,
+        "max_level":1},
     "enable_tankfactories":{
         "name":"Open Tank factory",
         "button_placement":"object_headquarters",
@@ -1283,6 +1407,7 @@ function buildupGameScreen(){
                         X += '<button onclick="buyClick(\'' + obj + '\',\'1\')" class="button buy" id="buy_' + obj + '">' + objects[obj]["build_text"] + '</button>' +
                              '<button onclick="buyClick(\'' + obj + '\',\'10\')" class="button buy" id="buy_' + obj + '">x10</button>' +
                              '<button onclick="buyClick(\'' + obj + '\',\'100\')" class="button buy" id="buy_' + obj + '">x100</button>' +
+                             '<button onclick="buyClick(\'' + obj + '\',\'500\')" class="button buy" id="buy_' + obj + '">x500</button>' +
                              '<button onclick="autoBuyClick(\'' + obj + '\')" class="button autobuy" id="autobuy_' + obj + '">Automatic</button>';
                     }
                     for (var upg in upgrades) {
@@ -1556,9 +1681,10 @@ function buyClick(objectName, times){
         }
         for (var k in player_currency) {
             if (player_currency.hasOwnProperty(k)) {
-                if (objects[objectName][k] > 0) {
+                if ((objects[objectName][k] > 0) || (objects[objectName]['adds_' + k] > 0)) {
                     if (k !== "housing") {
-                        player_currency[k] -= objects[objectName][k]
+                        player_currency[k] -= objects[objectName][k];
+                        player_currency[k] += objects[objectName]['adds_' + k];
                     }
                 }
             }
