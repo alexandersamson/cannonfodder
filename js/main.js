@@ -4,12 +4,12 @@ var player_currency = {
     "money"         : 0,
     "food"          : 0,
     "housing"       : 0,
+    "wood"          : 0,
     "metal"         : 0,
     "plastics"      : 0,
-    "wood"          : 0,
     "electronics"   : 0,
     "intelligence"  : 0,
-    "moral"         : 10,
+    "moral"         : 0,
     "firepower"     : 0
 };
 
@@ -17,12 +17,12 @@ var update_currency = {
     "money"         : 0,
     "food"          : 0,
     "housing"       : 0,
+    "wood"          : 0,
     "metal"         : 0,
     "plastics"      : 0,
-    "wood"          : 0,
     "electronics"   : 0,
     "intelligence"  : 0,
-    "moral"         : 0,
+    "moral"         : 10,
     "firepower"     : 0
 };
 
@@ -30,9 +30,9 @@ var currency_per_tick = {
     "money"         : 0,
     "food"          : 0,
     "housing"       : 0,
+    "wood"          : 0,
     "metal"         : 0,
     "plastics"      : 0,
-    "wood"          : 0,
     "electronics"   : 0,
     "intelligence"  : 0,
     "moral"         : 0,
@@ -43,9 +43,9 @@ var currency_per_tick_base = {
     "money"         : 0,
     "food"          : 0,
     "housing"       : 0,
+    "wood"          : 0,
     "metal"         : 0,
     "plastics"      : 0,
-    "wood"          : 0,
     "electronics"   : 0,
     "intelligence"  : 0,
     "moral"         : 0,
@@ -56,9 +56,9 @@ var player_currency_names = {
     "money"         : "Money",
     "food"          : "Food",
     "housing"       : "Housing",
+    "wood"          : "Wood",
     "metal"         : "Steel",
     "plastics"      : "Plastics",
-    "wood"          : "Wood",
     "electronics"   : "Electronics",
     "intelligence"  : "Intelligence",
     "moral"         : "Moral",
@@ -1311,7 +1311,7 @@ var upgrades= {
         "cost":"firepower",
         "cost_amount_base":5000,
         "cost_level_increment_power":3,
-        "cost_amount":200000,
+        "cost_amount":500000,
         "current_level":0,
         "max_level":1},
     "enable_tankfactories":{
@@ -1423,7 +1423,7 @@ function buildupGameScreen(){
              '</div>';
         }
     }
-    X += '<div class="footer">Version:' + versioning["version"] + ' - build: ' + versioning["build"] + ' - Contact: ' +versioning["contact"]+ ' - <a href="changelog.html">Open changelog</a></div>';
+    X += '<div class="footer">Version:' + versioning["version"] + ' - build: ' + versioning["build"] + ' - Contact: ' +versioning["contact"]+ ' - <a href="changelog.html">Open changelog</a>&nbsp;&nbsp;<a href="https://donorbox.org/donate-cannonfodder">Donate</a></div>';
     $( '#game_screen' ).html(X);
     if (autobuyer["object"] !== "none") {
         $("#autobuy_" + autobuyer["object"]).addClass("autobuy_active");
