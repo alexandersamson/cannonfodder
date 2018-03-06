@@ -1,4 +1,4 @@
-var versioning = {"version":"B04","build":1};
+var versioning = {"version":"B04","build":3};
 
 var player_currency = {
     "money"         : 0,
@@ -805,7 +805,7 @@ var objects = {"object_headquarters": {
 };
 
 objects_descriptions = {
-    "object_headquarters":"All your base are bolong to us.",
+    "object_headquarters":"All your base are belong to us.",
     "object_researchfacility":"Why researching if you can search it once? A research facility allows you to train scientists.",
     "object_barracks":"Allows the training of general purpose cannonfodder. You gotta feed those cannons, right!",
     "object_tankfactory":"Allows the bulding of combat thanks",
@@ -1026,6 +1026,7 @@ function loadWebstorage(){
                     objects = loadedFile["objects"];
                     player_currency = loadedFile["currency"];
                     autobuyer = loadedFile["autobuy"];
+                    updateHousingInit();
                 }
                 else {
                     localStorage.setItem("cannonfodder_savegame", saveFile);
@@ -1120,6 +1121,18 @@ function updateHousing(){
         }
     }
     player_currency["housing"] += housingAdded;
+}
+
+function updateHousingInit(){
+    housingAdded = 0;
+    for (var objectName in objects){
+        if (objects.hasOwnProperty(objectName)) {
+            if ((objects[objectName]["adds_housing"]) > 0 && (objects[objectName]["owned"] > 0)) {
+                housingAdded += objects[objectName]["adds_housing"] * objects[objectName]["owned"];
+            }
+        }
+    }
+    player_currency["housing"] = housingAdded;
 }
 
 
@@ -1338,6 +1351,7 @@ function buyClick(objectName, times){
             objects[objects[objectName]["consumes"]]["owned"] -= 1;
         }
         setAdaptiveBuildPrices();
+        updateHousing();
     }
 }
 
@@ -1390,7 +1404,7 @@ function setAdaptiveBuildPrices(){
 
 
 function autoSaveWebStorage() {
-    if (autoSaveCounter > 300) {    //every 30 seconds
+    if (autoSaveCounter > 150) {    //every 30 seconds
         autoSaveCounter = 0;
         var saveFile = btoa(JSON.stringify({"versioning":versioning,"upgrades": upgrades, "objects": objects, "currency":player_currency,"autobuy":autobuyer}));
         if (typeof(Storage) !== "undefined") {
