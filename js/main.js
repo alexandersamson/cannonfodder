@@ -1,4 +1,4 @@
-var versioning = {"version":"B08","build":2,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"B08","build":3,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
@@ -1644,6 +1644,36 @@ var upgrades= {
         "cost_amount_base":0,
         "cost_level_increment_power":1,
         "cost_amount":50,
+        "current_level":0,
+        "max_level":1},
+    "equip_steelplows":{
+        "name":"Equip steel plows",
+        "button_placement":"object_farmer",
+        "available":true,
+        "affected_object":"object_farmer",
+        "add_type":"adds_tick_food",
+        "add_amount":0.015,
+        "set_type":"none",
+        "set_amount":true,
+        "cost":"steel",
+        "cost_amount_base":1,
+        "cost_level_increment_power":1,
+        "cost_amount":350000,
+        "current_level":0,
+        "max_level":1},
+    "equip_tractors":{
+        "name":"Fuel the tractors",
+        "button_placement":"object_farmer",
+        "available":true,
+        "affected_object":"object_farmer",
+        "add_type":"none",
+        "add_amount":0.175,
+        "set_type":"cost_per_tick_oil",
+        "set_amount":0.001,
+        "cost":"oil",
+        "cost_amount_base":1,
+        "cost_level_increment_power":1,
+        "cost_amount":9000,
         "current_level":0,
         "max_level":1},
     "teach_lumbering":{
