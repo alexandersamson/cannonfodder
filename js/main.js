@@ -1994,9 +1994,8 @@ function getCurrentHousing(){
         if (objects.hasOwnProperty(objectName)) {
             if ((objects[objectName]["owned"] > 0) && (objects[objectName]["housing"] > 0)) {
                 currentHousing += objects[objectName]["housing"] * objects[objectName]["owned"];
-                if (currentHousing > player_currency["housing"]){
-                    currentHousing = player_currency["housing"];
-                    objects[lastBoughtObject]["owned"] -= 1;
+                if (Math.trunc(currentHousing) > Math.trunc(player_currency["housing"])){
+                    player_currency["housing"] = Math.trunc(currentHousing);
                 }
             }
         }
