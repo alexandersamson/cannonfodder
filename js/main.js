@@ -1655,7 +1655,7 @@ var upgrades= {
         "add_amount":0.015,
         "set_type":"none",
         "set_amount":true,
-        "cost":"steel",
+        "cost":"metal",
         "cost_amount_base":1,
         "cost_level_increment_power":1,
         "cost_amount":350000,
