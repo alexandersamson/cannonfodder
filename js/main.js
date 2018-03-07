@@ -1,4 +1,4 @@
-var versioning = {"version":"B08","build":1,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"B08","build":2,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
