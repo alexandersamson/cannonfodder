@@ -326,7 +326,7 @@ textarea {
 .currency_title{
     display:block;
     float: left;
-    width:10%;
+    width:8%;
     font-size: 10px;
     min-width: 82px;
     padding-bottom:6px;
@@ -388,11 +388,19 @@ textarea {
     display:inline-block;
     float:left;
     border-width: 0px;
-    background-color: azure;
     padding:3px;
     margin: 3px;
     font-size: 10px;
     font-family: Verdana, sans-serif;
+    border-radius: 4px;
+}
+
+.additions{
+    background-color: #98c999;
+}
+
+.subtractions{
+    background-color: #e0aea2;
 }
 
 .object_info{
@@ -463,6 +471,11 @@ textarea {
     font-size: 10px;
 }
 
+.done{
+    opacity: 0.3;
+    cursor: default;
+}
+
 
 .footer{
     position: fixed;
@@ -485,4 +498,9 @@ textarea {
 }
 .footer a{
     color: #DDDDFF;
+}
+
+.hide{
+    visibility: hidden;
+    display: none;
 }
