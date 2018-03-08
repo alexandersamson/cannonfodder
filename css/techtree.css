@@ -1,0 +1,26 @@
+ul, li{
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Verdana, sans-serif;
+}
+
+.object{
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.upgrade{
+    color: darkblue;
+}
+
+
+.annotation{
+    opacity: 0.5;
+    font-weight: normal;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+}

@@ -1,4 +1,4 @@
-var versioning = {"version":"B08","build":3,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"B08","build":5,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
@@ -681,27 +681,27 @@ var objects = {"object_headquarters": {
         "requires_research":"none",
         "requires_research_level":1,
         "owned":0,
-        "money": 850000,
+        "money": 800000,
         "food": 0,
         "housing": 0,
-        "metal": 10000,
+        "metal": 12000,
         "oil" : 0,
         "plastics": 0,
         "wood": 5000,
         "electronics": 1000,
         "intelligence": 0,
-        "moral": 1000,
+        "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0.2,
+        "cost_per_tick_money": 2,
         "cost_per_tick_food": 0,
         "cost_per_tick_housing": 0,
-        "cost_per_tick_metal": 0.025,
+        "cost_per_tick_metal": 0.25,
         "cost_per_tick_plastics": 0,
-        "cost_per_tick_wood": 0.005,
+        "cost_per_tick_wood": 0.05,
         "cost_per_tick_oil": 0,
         "cost_per_tick_electronics": 0,
         "cost_per_tick_intelligence": 0,
-        "cost_per_tick_moral": 0.025,
+        "cost_per_tick_moral": 0.3,
         "cost_per_tick_firepower":0,
         "adds_money": 0,
         "adds_food": 0,
@@ -718,7 +718,7 @@ var objects = {"object_headquarters": {
         "adds_tick_food": 0,
         "adds_tick_housing": 0,
         "adds_tick_metal": 0,
-        "adds_tick_oil" : 0.2,
+        "adds_tick_oil" : 2,
         "adds_tick_plastics": 0,
         "adds_tick_wood": 0,
         "adds_tick_electronics": 0,
@@ -741,24 +741,24 @@ var objects = {"object_headquarters": {
         "requires_research":"enable_oiltanker",
         "requires_research_level":1,
         "owned":0,
-        "money": 50000,
+        "money": 75000,
         "food": 0,
         "housing": 0,
-        "metal": 2500,
+        "metal": 6000,
         "oil" : 0,
         "plastics": 0,
         "wood": 0,
         "electronics": 0,
         "intelligence": 0,
-        "moral": 250,
+        "moral": 0,
         "firepower":0,
         "cost_per_tick_money": 0,
         "cost_per_tick_food": 0,
         "cost_per_tick_housing": 0,
-        "cost_per_tick_metal": 0,
+        "cost_per_tick_metal": 0.005,
         "cost_per_tick_plastics": 0,
         "cost_per_tick_wood": 0,
-        "cost_per_tick_oil": 0.2,
+        "cost_per_tick_oil": 1.05,
         "cost_per_tick_electronics": 0,
         "cost_per_tick_intelligence": 0,
         "cost_per_tick_moral": 0.01,
@@ -774,7 +774,7 @@ var objects = {"object_headquarters": {
         "adds_intelligence": 0,
         "adds_moral": 0,
         "adds_firepower":0,
-        "adds_tick_money": 0.65,
+        "adds_tick_money": 20,
         "adds_tick_food": 0,
         "adds_tick_housing": 0,
         "adds_tick_metal": 0,
@@ -1102,7 +1102,7 @@ var objects = {"object_headquarters": {
         "requires_research_level":1,
         "owned":0,
         "money": 450,
-        "food": 50,
+        "food": 100,
         "housing": 0,
         "metal": 0,
         "oil" : 0,
@@ -1112,7 +1112,7 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0.025,
+        "cost_per_tick_money": 0.075,
         "cost_per_tick_food": 0,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
@@ -1597,7 +1597,8 @@ objects_descriptions = {
     "object_humantrafficking":"This is sooo bad, but the money is sooo good. <br>Human trafficking still exists and it is <b>really bad shit</b>. Please do enjoy this game, but also consider donating to charities, like: https://www.stopthetraffik.org/donate/",
     "object_drillingcompany":"Did you notice you are paying a lot of Moral/sec, but only receiving a small amount of business tax? Everything comes with a dirty price, especially in the oil business, where you where unable to keep your dirty hands off.",
     "object_oilwell":"This is not a drill! Oh wait... it might be one, actually.",
-    "object_oiltanker":"Did you ever wonder how far a oil tanker could travel using it's own tank AND it's cargo?."
+    "object_oiltanker":"Did you ever wonder how far a oil tanker could travel using it's own tank AND it's cargo?.",
+    "object_blackhathacker":"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01110100 01101000 01101001 01110011 00100000 01100111 01100001 01101101 01100101 00100000 00111010 00101001"
 };
 
 var upgrades= {
@@ -1629,6 +1630,21 @@ var upgrades= {
         "cost_amount_base":0,
         "cost_level_increment_power":1,
         "cost_amount":1000000,
+        "current_level":0,
+        "max_level":1},
+    "route_pipes_trough_population":{
+        "name":"Route pipes through villages",
+        "button_placement":"object_oilwell",
+        "available":true,
+        "affected_object":"object_oilwell",
+        "add_type":"adds_tick_oil",
+        "add_amount":8,
+        "set_type":"cost_per_tick_moral",
+        "set_amount":0.5,
+        "cost":"money",
+        "cost_amount_base":5000,
+        "cost_level_increment_power":3,
+        "cost_amount":50000000,
         "current_level":0,
         "max_level":1},
     "teach_farming":{
@@ -1673,7 +1689,7 @@ var upgrades= {
         "cost":"oil",
         "cost_amount_base":1,
         "cost_level_increment_power":1,
-        "cost_amount":9000,
+        "cost_amount":90000,
         "current_level":0,
         "max_level":1},
     "teach_lumbering":{
@@ -1802,7 +1818,7 @@ var upgrades= {
         "available":true,
         "affected_object":"object_house",
         "add_type":"adds_tick_housing",
-        "add_amount":0.002,
+        "add_amount":0.003,
         "set_type":"none",
         "set_amount":false,
         "cost":"wood",
@@ -1817,7 +1833,7 @@ var upgrades= {
         "available":true,
         "affected_object":"object_mansion",
         "add_type":"adds_tick_moral",
-        "add_amount":0.01,
+        "add_amount":0.025,
         "set_type":"none",
         "set_amount":false,
         "cost":"wood",
@@ -1982,13 +1998,13 @@ var upgrades= {
         "available":true,
         "affected_object":"object_scrapper",
         "add_type":"adds_tick_money",
-        "add_amount":0.035,
-        "set_type":"none",
-        "set_amount":true,
+        "add_amount":0.050,
+        "set_type":"cost_per_tick_plastics",
+        "set_amount":0.003,
         "cost":"plastics",
         "cost_amount_base":5000,
         "cost_level_increment_power":3,
-        "cost_amount":75000,
+        "cost_amount":90000,
         "current_level":0,
         "max_level":1},
     "enable_clandestineoperations":{
@@ -2057,7 +2073,7 @@ var upgrades= {
 var currentHousing = 0;
 var lastBoughtObject = "none";
 var gameIntervalTimer = 100;
-var autobuyer = {"object":"none","rate":1,"counter_set":9,"counter_value":0,"simultanous_buys":1};
+var autobuyer = {"object":"none","rate":1,"counter_set":9,"counter_value":0,"simultanous_buys":10};
 var autoSaveCounter = 0;
 var housingAdded = 0;
 
@@ -2068,7 +2084,7 @@ buildupGameScreen();
 
 
 
-function abortTimer() { // to be called when you want to stop the timer
+function abortTimer() {
     clearInterval(tId);
 }
 
@@ -2146,7 +2162,7 @@ function buildupGameScreen(){
              '</div>';
         }
     }
-    X += '<div class="footer">Version:' + versioning["version"] + ' - build: ' + versioning["build"] + ' - Contact: ' +versioning["contact"]+ ' - <a href="changelog.html">Open changelog</a>&nbsp;&nbsp;<a href="https://donorbox.org/donate-cannonfodder">Donate</a></div>';
+    X += '<div class="footer">Autosaves every 15 sec - V' + versioning["version"] + ' build ' + versioning["build"] + ' - ' +versioning["contact"]+ ' - <a href="techtree.html">Techtree</a>&nbsp;&nbsp;<a href="changelog.html">Changelog</a>&nbsp;&nbsp;<a href="https://donorbox.org/donate-cannonfodder">Donate</a></div>';
     $( '#game_screen' ).html(X);
     if (autobuyer["object"] !== "none") {
         $("#autobuy_" + autobuyer["object"]).addClass("autobuy_active");
@@ -2340,6 +2356,7 @@ function updateObjectBuildcost(){
         var hide = {"#buildcost_":true,"#buildcosttick_":true,"#adds_":true,"#adds_per_tick_":true};
         if (objects.hasOwnProperty(objectName)) {
             var buildcostSet = 0;
+            var costTickSet = 0;
             var addsSet = 0;
             var addsTickSet = 0;
             for (var key in player_currency) {
@@ -2378,9 +2395,9 @@ function updateObjectBuildcost(){
                     if (objects[objectName]["cost_per_tick_"+key] > 0) {
                         hide["#buildcosttick_"] = false;
                         var costPerTick = "#buildcosttick_" + objectName;
-                        if(addsSet === 0){
+                        if(costTickSet === 0){
                             $( costPerTick ).html('Cost per second:<br />');
-                            addsSet = 1;
+                            costTickSet = 1;
                         }
                         $( costPerTick ).append((objects[objectName]["cost_per_tick_"+key]*10).toFixed(2) + " " + player_currency_names[key] + "<br />");
                     }
@@ -2406,8 +2423,11 @@ function updateObjectBuildcost(){
             }
             for (var idName in hide) {
                 if (hide.hasOwnProperty(idName)) {
-                    if(hide[idName] === true) {
+                    if((hide[idName] === true) && ($(idName + objectName).hasClass('hide') === false)) {
                         $(idName + objectName).addClass('hide');
+                    }
+                    else if((hide[idName] === false) && $(idName + objectName).hasClass('hide') === true){
+                        $(idName + objectName).removeClass('hide');
                     }
                 }
             }
