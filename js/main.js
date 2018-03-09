@@ -1,4 +1,4 @@
-var versioning = {"version":"B08","build":5,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"1.0","build":2,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
@@ -43,6 +43,34 @@ var currency_per_tick = {
 };
 
 var currency_per_tick_base = {
+    "money"         : 0,
+    "food"          : 0,
+    "housing"       : 0,
+    "wood"          : 0,
+    "metal"         : 0,
+    "oil"           : 0,
+    "plastics"      : 0,
+    "electronics"   : 0,
+    "intelligence"  : 0,
+    "moral"         : 0,
+    "firepower"     : 0
+};
+
+var cost_per_tick_total = {
+    "money"         : 0,
+    "food"          : 0,
+    "housing"       : 0,
+    "wood"          : 0,
+    "metal"         : 0,
+    "oil"           : 0,
+    "plastics"      : 0,
+    "electronics"   : 0,
+    "intelligence"  : 0,
+    "moral"         : 0,
+    "firepower"     : 0
+};
+
+var delta_per_tick = {
     "money"         : 0,
     "food"          : 0,
     "housing"       : 0,
@@ -106,7 +134,7 @@ var objects = {"object_headquarters": {
         "cost_per_tick_firepower":0,
         "adds_money": 0,
         "adds_food": 0,
-        "adds_housing": 200,
+        "adds_housing": 500,
         "adds_metal": 0,
         "adds_oil" : 0,
         "adds_plastics": 0,
@@ -124,7 +152,7 @@ var objects = {"object_headquarters": {
         "adds_tick_wood": 0,
         "adds_tick_electronics": 0,
         "adds_tick_intelligence": 0,
-        "adds_tick_moral": 0.1,
+        "adds_tick_moral": 0.2,
         "adds_tick_firepower":0,
         "hitpoints": 5000,
         "damage": 0,
@@ -211,7 +239,7 @@ var objects = {"object_headquarters": {
         "wood": 0,
         "electronics": 0,
         "intelligence": 0,
-        "moral": 100,
+        "moral": 250,
         "firepower":0,
         "cost_per_tick_money": 0,
         "cost_per_tick_food": 0,
@@ -274,13 +302,13 @@ var objects = {"object_headquarters": {
         "moral": 0,
         "firepower":0,
         "cost_per_tick_money": 0,
-        "cost_per_tick_food": 0.2,
+        "cost_per_tick_food": 0.4,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
         "cost_per_tick_plastics": 0,
         "cost_per_tick_wood": 0,
         "cost_per_tick_oil": 0,
-        "cost_per_tick_electronics": 0.05,
+        "cost_per_tick_electronics": 0.2,
         "cost_per_tick_intelligence": 0,
         "cost_per_tick_moral": 0,
         "cost_per_tick_firepower":0,
@@ -295,7 +323,7 @@ var objects = {"object_headquarters": {
         "adds_intelligence": 0,
         "adds_moral": 0,
         "adds_firepower":0,
-        "adds_tick_money": 0.2,
+        "adds_tick_money": 0.8,
         "adds_tick_food": 0,
         "adds_tick_housing": 0,
         "adds_tick_metal": 0,
@@ -382,9 +410,9 @@ var objects = {"object_headquarters": {
         "requires_research":"none",
         "requires_research_level":1,
         "owned":0,
-        "money": 2500,
+        "money": 500,
         "food": 75,
-        "housing": 10,
+        "housing": 15,
         "metal": 100,
         "oil" : 0,
         "plastics": 150,
@@ -393,8 +421,8 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0,
-        "cost_per_tick_food": 0.075,
+        "cost_per_tick_money": 0.05,
+        "cost_per_tick_food": 0.125,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
         "cost_per_tick_plastics": 0,
@@ -585,7 +613,7 @@ var objects = {"object_headquarters": {
         "cost_per_tick_firepower":0,
         "adds_money": 0,
         "adds_food": 0,
-        "adds_housing": 22000,
+        "adds_housing": 25000,
         "adds_metal": 0,
         "adds_oil" : 0,
         "adds_plastics": 0,
@@ -603,7 +631,7 @@ var objects = {"object_headquarters": {
         "adds_tick_wood": 0,
         "adds_tick_electronics": 0,
         "adds_tick_intelligence": 0,
-        "adds_tick_moral": 0.3,
+        "adds_tick_moral": 1,
         "adds_tick_firepower":0,
         "hitpoints": 5500,
         "damage": 0,
@@ -681,7 +709,7 @@ var objects = {"object_headquarters": {
         "requires_research":"none",
         "requires_research_level":1,
         "owned":0,
-        "money": 800000,
+        "money": 650000,
         "food": 0,
         "housing": 0,
         "metal": 12000,
@@ -755,13 +783,13 @@ var objects = {"object_headquarters": {
         "cost_per_tick_money": 0,
         "cost_per_tick_food": 0,
         "cost_per_tick_housing": 0,
-        "cost_per_tick_metal": 0.005,
+        "cost_per_tick_metal": 0.018,
         "cost_per_tick_plastics": 0,
         "cost_per_tick_wood": 0,
-        "cost_per_tick_oil": 1.05,
+        "cost_per_tick_oil": 0.525,
         "cost_per_tick_electronics": 0,
         "cost_per_tick_intelligence": 0,
-        "cost_per_tick_moral": 0.01,
+        "cost_per_tick_moral": 0.075,
         "cost_per_tick_firepower":0,
         "adds_money": 0,
         "adds_food": 0,
@@ -774,11 +802,71 @@ var objects = {"object_headquarters": {
         "adds_intelligence": 0,
         "adds_moral": 0,
         "adds_firepower":0,
-        "adds_tick_money": 20,
+        "adds_tick_money": 10,
         "adds_tick_food": 0,
         "adds_tick_housing": 0,
         "adds_tick_metal": 0,
         "adds_tick_oil" : 0,
+        "adds_tick_plastics": 0,
+        "adds_tick_wood": 0,
+        "adds_tick_electronics": 0,
+        "adds_tick_intelligence": 0,
+        "adds_tick_moral": 0,
+        "adds_tick_firepower":0,
+        "hitpoints": 500,
+        "damage": 0,
+        "speed": 0,
+        "buildspeed": 1,
+        "consumes": "none"
+    },"object_oilrefinery": {
+        "name":"Oil refinery",
+        "build_text":"Build Oil refinery",
+        "amount_text":"Oil refineries",
+        "buyable":true,
+        "visible":false,
+        "requires":"none",
+        "requires_amount":0,
+        "requires_research":"enable_oilrefinery",
+        "requires_research_level":1,
+        "owned":0,
+        "money": 1500000,
+        "food": 0,
+        "housing": 0,
+        "metal": 10000,
+        "oil" : 0,
+        "plastics": 0,
+        "wood": 0,
+        "electronics": 5000,
+        "intelligence": 0,
+        "moral": 0,
+        "firepower":0,
+        "cost_per_tick_money": 10,
+        "cost_per_tick_food": 0,
+        "cost_per_tick_housing": 0,
+        "cost_per_tick_metal": 0.75,
+        "cost_per_tick_plastics": 0,
+        "cost_per_tick_wood": 0,
+        "cost_per_tick_oil": 13.3,
+        "cost_per_tick_electronics": 0,
+        "cost_per_tick_intelligence": 0,
+        "cost_per_tick_moral": 0.5,
+        "cost_per_tick_firepower":0,
+        "adds_money": 0,
+        "adds_food": 0,
+        "adds_housing": 0,
+        "adds_metal": 0,
+        "adds_oil" : 0,
+        "adds_plastics": 0,
+        "adds_wood": 0,
+        "adds_electronics": 0,
+        "adds_intelligence": 0,
+        "adds_moral": 0,
+        "adds_firepower":0,
+        "adds_tick_money": 0,
+        "adds_tick_food": 0,
+        "adds_tick_housing": 0,
+        "adds_tick_metal": 0,
+        "adds_tick_oil" : 33.3,
         "adds_tick_plastics": 0,
         "adds_tick_wood": 0,
         "adds_tick_electronics": 0,
@@ -992,12 +1080,12 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0.005,
+        "cost_per_tick_money": 0.007,
         "cost_per_tick_food": 0.007,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
         "cost_per_tick_plastics": 0,
-        "cost_per_tick_wood": 0,
+        "cost_per_tick_wood": 0.001,
         "cost_per_tick_oil": 0,
         "cost_per_tick_electronics": 0,
         "cost_per_tick_intelligence": 0,
@@ -1017,7 +1105,7 @@ var objects = {"object_headquarters": {
         "adds_tick_money": 0,
         "adds_tick_food": 0,
         "adds_tick_housing": 0,
-        "adds_tick_metal": 0.010,
+        "adds_tick_metal": 0.008,
         "adds_tick_oil" : 0,
         "adds_tick_plastics": 0,
         "adds_tick_wood": 0,
@@ -1052,8 +1140,8 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0.01,
-        "cost_per_tick_food": 0.005,
+        "cost_per_tick_money": 0.015,
+        "cost_per_tick_food": 0.01,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
         "cost_per_tick_plastics": 0,
@@ -1101,7 +1189,7 @@ var objects = {"object_headquarters": {
         "requires_research":"teach_scrapping",
         "requires_research_level":1,
         "owned":0,
-        "money": 450,
+        "money": 250,
         "food": 100,
         "housing": 0,
         "metal": 0,
@@ -1112,8 +1200,8 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0.075,
-        "cost_per_tick_food": 0,
+        "cost_per_tick_money": 0.1,
+        "cost_per_tick_food": 0.016,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
         "cost_per_tick_plastics": 0,
@@ -1223,7 +1311,7 @@ var objects = {"object_headquarters": {
         "owned":0,
         "money": 4500,
         "food": 100,
-        "housing": 20,
+        "housing": 25,
         "metal": 500,
         "oil" : 0,
         "plastics": 0,
@@ -1283,7 +1371,7 @@ var objects = {"object_headquarters": {
         "owned":0,
         "money": 60000,
         "food": 200,
-        "housing": 20,
+        "housing": 50,
         "metal": 500,
         "oil" : 0,
         "plastics": 0,
@@ -1293,7 +1381,7 @@ var objects = {"object_headquarters": {
         "moral": 0,
         "firepower":0,
         "cost_per_tick_money": 1,
-        "cost_per_tick_food": 0.1,
+        "cost_per_tick_food": 0.2,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
         "cost_per_tick_plastics": 0,
@@ -1323,7 +1411,7 @@ var objects = {"object_headquarters": {
         "adds_tick_wood": 0,
         "adds_tick_electronics": 0,
         "adds_tick_intelligence": 0,
-        "adds_tick_moral": 0.002,
+        "adds_tick_moral": 0.001,
         "adds_tick_firepower":0.1,
         "hitpoints": 50,
         "damage": 30,
@@ -1343,7 +1431,7 @@ var objects = {"object_headquarters": {
         "owned":0,
         "money": 1350000,
         "food": 500,
-        "housing": 30,
+        "housing": 60,
         "metal": 500,
         "oil" : 0,
         "plastics": 0,
@@ -1352,8 +1440,8 @@ var objects = {"object_headquarters": {
         "intelligence": 425,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 50,
-        "cost_per_tick_food": 0.15,
+        "cost_per_tick_money": 35,
+        "cost_per_tick_food": 0.35,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
         "cost_per_tick_plastics": 0,
@@ -1382,9 +1470,9 @@ var objects = {"object_headquarters": {
         "adds_tick_plastics": 0,
         "adds_tick_wood": 0,
         "adds_tick_electronics": 0,
-        "adds_tick_intelligence": 0.005,
-        "adds_tick_moral": 0.01,
-        "adds_tick_firepower":0.2,
+        "adds_tick_intelligence": 0.01,
+        "adds_tick_moral": 0.05,
+        "adds_tick_firepower":0.8,
         "hitpoints": 50,
         "damage": 30,
         "speed": 10,
@@ -1401,9 +1489,9 @@ var objects = {"object_headquarters": {
         "requires_research":"enable_colonel",
         "requires_research_level":1,
         "owned":0,
-        "money": 18750000,
+        "money": 9500000,
         "food": 1000,
-        "housing": 50,
+        "housing": 90,
         "metal": 6500,
         "oil" : 0,
         "plastics": 1000,
@@ -1412,8 +1500,8 @@ var objects = {"object_headquarters": {
         "intelligence": 3000,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 750,
-        "cost_per_tick_food": 0.45,
+        "cost_per_tick_money": 500,
+        "cost_per_tick_food": 0.50,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
         "cost_per_tick_plastics": 0,
@@ -1442,9 +1530,9 @@ var objects = {"object_headquarters": {
         "adds_tick_plastics": 0,
         "adds_tick_wood": 0,
         "adds_tick_electronics": 0,
-        "adds_tick_intelligence": 0.02,
-        "adds_tick_moral": 0.1,
-        "adds_tick_firepower":1,
+        "adds_tick_intelligence": 0.1,
+        "adds_tick_moral": 1.2,
+        "adds_tick_firepower":10,
         "hitpoints": 50,
         "damage": 30,
         "speed": 10,
@@ -1521,10 +1609,10 @@ var objects = {"object_headquarters": {
         "requires_research":"none",
         "requires_research_level":1,
         "owned":0,
-        "money": 12500,
+        "money": 15000,
         "food": 500,
         "housing": 80,
-        "metal": 1600,
+        "metal": 2500,
         "oil" : 100,
         "plastics": 400,
         "wood": 0,
@@ -1532,7 +1620,7 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0,
+        "cost_per_tick_money": 0.5,
         "cost_per_tick_food": 0,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
@@ -1564,12 +1652,314 @@ var objects = {"object_headquarters": {
         "adds_tick_electronics": 0,
         "adds_tick_intelligence": 0,
         "adds_tick_moral": 0,
-        "adds_tick_firepower":0.01,
+        "adds_tick_firepower":0.05,
         "hitpoints": 9000,
         "damage": 3000,
         "speed": 100,
         "buildspeed": 1,
         "consumes": "object_soldier"
+    },"object_mainbattletank": {
+        "name":"Main battle tank",
+        "build_text":"Build Main battle tank",
+        "amount_text":"Main battle tanks",
+        "buyable":true,
+        "visible":false,
+        "requires":"object_tankfactory",
+        "requires_amount":1,
+        "requires_research":"enable_mainbattletank",
+        "requires_research_level":1,
+        "owned":0,
+        "money": 200000,
+        "food": 2500,
+        "housing": 250,
+        "metal": 225000,
+        "oil" : 500,
+        "plastics": 1500,
+        "wood": 0,
+        "electronics": 2000,
+        "intelligence": 0,
+        "moral": 0,
+        "firepower":0,
+        "cost_per_tick_money": 2,
+        "cost_per_tick_food": 0,
+        "cost_per_tick_housing": 0,
+        "cost_per_tick_metal": 0,
+        "cost_per_tick_plastics": 0,
+        "cost_per_tick_wood": 0,
+        "cost_per_tick_oil": 0.5,
+        "cost_per_tick_electronics": 0,
+        "cost_per_tick_intelligence": 0,
+        "cost_per_tick_moral": 0,
+        "cost_per_tick_firepower":0,
+        "adds_money": 0,
+        "adds_food": 0,
+        "adds_housing": 0,
+        "adds_metal": 0,
+        "adds_oil" : 0,
+        "adds_plastics": 0,
+        "adds_wood": 0,
+        "adds_electronics": 0,
+        "adds_intelligence": 0,
+        "adds_moral": 0,
+        "adds_firepower":0,
+        "adds_tick_money": 0,
+        "adds_tick_food": 0,
+        "adds_tick_housing": 0,
+        "adds_tick_metal": 0,
+        "adds_tick_oil" : 0,
+        "adds_tick_plastics": 0,
+        "adds_tick_wood": 0,
+        "adds_tick_electronics": 0,
+        "adds_tick_intelligence": 0,
+        "adds_tick_moral": 0,
+        "adds_tick_firepower":250,
+        "hitpoints": 9000,
+        "damage": 3000,
+        "speed": 100,
+        "buildspeed": 1,
+        "consumes": "object_sergeant"},
+    "object_howitzer": {
+        "name":"Howitzer",
+        "build_text":"Build howitzer",
+        "amount_text":"Howitzers",
+        "buyable":true,
+        "visible":false,
+        "requires":"object_tankfactory",
+        "requires_amount":1,
+        "requires_research":"eanble_howitzer",
+        "requires_research_level":1,
+        "owned":0,
+        "money": 500000,
+        "food": 6500,
+        "housing": 500,
+        "metal": 2500000,
+        "oil" : 2500,
+        "plastics": 9000,
+        "wood": 0,
+        "electronics": 9000,
+        "intelligence": 0,
+        "moral": 0,
+        "firepower":0,
+        "cost_per_tick_money": 25,
+        "cost_per_tick_food": 0,
+        "cost_per_tick_housing": 0,
+        "cost_per_tick_metal": 0,
+        "cost_per_tick_plastics": 0,
+        "cost_per_tick_wood": 0,
+        "cost_per_tick_oil": 5,
+        "cost_per_tick_electronics": 0,
+        "cost_per_tick_intelligence": 0,
+        "cost_per_tick_moral": 0,
+        "cost_per_tick_firepower":0,
+        "adds_money": 0,
+        "adds_food": 0,
+        "adds_housing": 0,
+        "adds_metal": 0,
+        "adds_oil" : 0,
+        "adds_plastics": 0,
+        "adds_wood": 0,
+        "adds_electronics": 0,
+        "adds_intelligence": 0,
+        "adds_moral": 0,
+        "adds_firepower":0,
+        "adds_tick_money": 0,
+        "adds_tick_food": 0,
+        "adds_tick_housing": 0,
+        "adds_tick_metal": 0,
+        "adds_tick_oil" : 0,
+        "adds_tick_plastics": 0,
+        "adds_tick_wood": 0,
+        "adds_tick_electronics": 0,
+        "adds_tick_intelligence": 0,
+        "adds_tick_moral": 0,
+        "adds_tick_firepower":8000,
+        "hitpoints": 9000,
+        "damage": 3000,
+        "speed": 100,
+        "buildspeed": 1,
+        "consumes": "object_colonel"},
+    "object_roboticsfactory": {
+        "name":"Robotics factory",
+        "build_text":"Open robotics factory",
+        "amount_text":"Robotics factories",
+        "buyable":false,
+        "visible":false,
+        "requires":"none",
+        "requires_amount":0,
+        "requires_research":"enable_roboticsfactory",
+        "requires_research_level":1,
+        "owned":1,
+        "money": 0,
+        "food": 0,
+        "housing": 0,
+        "metal": 0,
+        "oil" : 0,
+        "plastics": 0,
+        "wood": 0,
+        "electronics": 0,
+        "intelligence": 0,
+        "moral": 0,
+        "firepower":0,
+        "cost_per_tick_money": 0,
+        "cost_per_tick_food": 0,
+        "cost_per_tick_housing": 0,
+        "cost_per_tick_metal": 0,
+        "cost_per_tick_plastics": 0,
+        "cost_per_tick_wood": 0,
+        "cost_per_tick_oil": 0,
+        "cost_per_tick_electronics": 0,
+        "cost_per_tick_intelligence": 0,
+        "cost_per_tick_moral": 0,
+        "cost_per_tick_firepower":0,
+        "adds_money": 0,
+        "adds_food": 0,
+        "adds_housing": 0,
+        "adds_metal": 0,
+        "adds_oil" : 0,
+        "adds_plastics": 0,
+        "adds_wood": 0,
+        "adds_electronics": 0,
+        "adds_intelligence": 0,
+        "adds_moral": 0,
+        "adds_firepower":0,
+        "adds_tick_money": 0,
+        "adds_tick_food": 0,
+        "adds_tick_housing": 0,
+        "adds_tick_metal": 0,
+        "adds_tick_oil" : 0,
+        "adds_tick_plastics": 0,
+        "adds_tick_wood": 0,
+        "adds_tick_electronics": 0,
+        "adds_tick_intelligence": 0,
+        "adds_tick_moral": 0,
+        "adds_tick_firepower":0,
+        "hitpoints": 5000,
+        "damage": 0,
+        "speed": 0,
+        "buildspeed": 1,
+        "consumes": "none"
+    },
+    "object_supercomputer": {
+        "name":"Supercomputer",
+        "build_text":"Build supercomputer",
+        "amount_text":"Supercomputers",
+        "buyable":true,
+        "visible":false,
+        "requires":"none",
+        "requires_amount":0,
+        "requires_research":"enable_supercomputer",
+        "requires_research_level":1,
+        "owned":0,
+        "money": 5000,
+        "food": 0,
+        "housing": 0,
+        "metal": 0,
+        "oil" : 0,
+        "plastics": 500,
+        "wood": 0,
+        "electronics": 1000,
+        "intelligence": 100,
+        "moral": 0,
+        "firepower":0,
+        "cost_per_tick_money": 0.025,
+        "cost_per_tick_food": 0,
+        "cost_per_tick_housing": 0,
+        "cost_per_tick_metal": 0,
+        "cost_per_tick_plastics": 0,
+        "cost_per_tick_wood": 0,
+        "cost_per_tick_oil": 0,
+        "cost_per_tick_electronics": 0.1,
+        "cost_per_tick_intelligence": 0,
+        "cost_per_tick_moral": 0,
+        "cost_per_tick_firepower":0,
+        "adds_money": 0,
+        "adds_food": 0,
+        "adds_housing": 0,
+        "adds_metal": 0,
+        "adds_oil" : 0,
+        "adds_plastics": 0,
+        "adds_wood": 0,
+        "adds_electronics": 0,
+        "adds_intelligence": 0,
+        "adds_moral": 0,
+        "adds_firepower":0,
+        "adds_tick_money": 0,
+        "adds_tick_food": 0,
+        "adds_tick_housing": 0,
+        "adds_tick_metal": 0,
+        "adds_tick_oil" : 0,
+        "adds_tick_plastics": 0,
+        "adds_tick_wood": 0,
+        "adds_tick_electronics": 0,
+        "adds_tick_intelligence": 1,
+        "adds_tick_moral": 0,
+        "adds_tick_firepower":0,
+        "hitpoints": 5000,
+        "damage": 0,
+        "speed": 0,
+        "buildspeed": 1,
+        "consumes": "none"
+    },
+    "object_3dprinter": {
+        "name":"Industrial 3D Printer",
+        "build_text":"Build Industrial 3D Printer",
+        "amount_text":"Industrial 3D Printers",
+        "buyable":true,
+        "visible":false,
+        "requires":"none",
+        "requires_amount":0,
+        "requires_research":"enable_3dprinter",
+        "requires_research_level":1,
+        "owned":0,
+        "money": 2500,
+        "food": 0,
+        "housing": 0,
+        "metal": 0,
+        "oil" : 0,
+        "plastics": 100,
+        "wood": 0,
+        "electronics": 2000,
+        "intelligence": 0,
+        "moral": 0,
+        "firepower":0,
+        "cost_per_tick_money": 0,
+        "cost_per_tick_food": 0,
+        "cost_per_tick_housing": 0,
+        "cost_per_tick_metal": 0.01,
+        "cost_per_tick_plastics": 0.1,
+        "cost_per_tick_wood": 0,
+        "cost_per_tick_oil": 0,
+        "cost_per_tick_electronics": 0.01,
+        "cost_per_tick_intelligence": 0,
+        "cost_per_tick_moral": 0,
+        "cost_per_tick_firepower":0,
+        "adds_money": 0,
+        "adds_food": 0,
+        "adds_housing": 0,
+        "adds_metal": 0,
+        "adds_oil" : 0,
+        "adds_plastics": 0,
+        "adds_wood": 0,
+        "adds_electronics": 0,
+        "adds_intelligence": 0,
+        "adds_moral": 0,
+        "adds_firepower":0,
+        "adds_tick_money": 0.5,
+        "adds_tick_food": 0,
+        "adds_tick_housing": 0,
+        "adds_tick_metal": 0,
+        "adds_tick_oil" : 0,
+        "adds_tick_plastics": 0,
+        "adds_tick_wood": 0,
+        "adds_tick_electronics": 0,
+        "adds_tick_intelligence": 0,
+        "adds_tick_moral": 0,
+        "adds_tick_firepower":0,
+        "hitpoints": 5000,
+        "damage": 0,
+        "speed": 0,
+        "buildspeed": 1,
+        "consumes": "none"
     }
 };
 
@@ -1598,12 +1988,18 @@ objects_descriptions = {
     "object_drillingcompany":"Did you notice you are paying a lot of Moral/sec, but only receiving a small amount of business tax? Everything comes with a dirty price, especially in the oil business, where you where unable to keep your dirty hands off.",
     "object_oilwell":"This is not a drill! Oh wait... it might be one, actually.",
     "object_oiltanker":"Did you ever wonder how far a oil tanker could travel using it's own tank AND it's cargo?.",
-    "object_blackhathacker":"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01110100 01101000 01101001 01110011 00100000 01100111 01100001 01101101 01100101 00100000 00111010 00101001"
+    "object_blackhathacker":"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01110100 01101000 01101001 01110011 00100000 01100111 01100001 01101101 01100101 00100000 00111010 00101001",
+    "object_mainbattletank":"You will need a sergeant for this nice piece of cold steel.",
+    "object_howitzer":"How it's done, you ask? Howitzer!",
+    "object_roboticsfactory":"Beep beep beep blip blip beep beep",
+    "object_supercomputer":"Just a lot more Beep beep beep blip blip beep beep",
+    "object_3dprinter":"Mass production of plastic fantastic objects for huge profits.",
+    "object_oilrefinery":"Creating more mass out of the same product? Total neglecting basic physics? This refinery can do just that!"
 };
 
 var upgrades= {
     "enable_drillingcompany":{
-        "name":"Open oil drilling company",
+        "name":"Open Oil drilling company",
         "button_placement":"object_headquarters",
         "available":true,
         "affected_object":"object_drillingcompany",
@@ -1618,7 +2014,7 @@ var upgrades= {
         "current_level":0,
         "max_level":1},
     "enable_oiltanker":{
-        "name":"Acquire shipyard",
+        "name":"Acquire Shipyard",
         "button_placement":"object_drillingcompany",
         "available":true,
         "affected_object":"object_oiltanker",
@@ -1630,6 +2026,21 @@ var upgrades= {
         "cost_amount_base":0,
         "cost_level_increment_power":1,
         "cost_amount":1000000,
+        "current_level":0,
+        "max_level":1},
+    "enable_oilrefinery":{
+        "name":"Research Oil refinery",
+        "button_placement":"object_drillingcompany",
+        "available":true,
+        "affected_object":"object_oilrefinery",
+        "add_type":"none",
+        "add_amount":0,
+        "set_type":"visible",
+        "set_amount":true,
+        "cost":"money",
+        "cost_amount_base":0,
+        "cost_level_increment_power":1,
+        "cost_amount":15000000,
         "current_level":0,
         "max_level":1},
     "route_pipes_trough_population":{
@@ -1647,6 +2058,21 @@ var upgrades= {
         "cost_amount":50000000,
         "current_level":0,
         "max_level":1},
+    "create_plastics":{
+        "name":"Refine waste into plastics",
+        "button_placement":"object_oilrefinery",
+        "available":true,
+        "affected_object":"object_oilrefinery",
+        "add_type":"adds_tick_plastics",
+        "add_amount":5,
+        "set_type":"none",
+        "set_amount":0,
+        "cost":"intelligence",
+        "cost_amount_base":6000000,
+        "cost_level_increment_power":3,
+        "cost_amount":6000000,
+        "current_level":0,
+        "max_level":5},
     "teach_farming":{
         "name":"Teach farming",
         "button_placement":"object_peasant",
@@ -1682,14 +2108,14 @@ var upgrades= {
         "button_placement":"object_farmer",
         "available":true,
         "affected_object":"object_farmer",
-        "add_type":"none",
+        "add_type":"food",
         "add_amount":0.175,
         "set_type":"cost_per_tick_oil",
         "set_amount":0.001,
         "cost":"oil",
         "cost_amount_base":1,
         "cost_level_increment_power":1,
-        "cost_amount":90000,
+        "cost_amount":70000,
         "current_level":0,
         "max_level":1},
     "teach_lumbering":{
@@ -1723,7 +2149,7 @@ var upgrades= {
         "current_level":0,
         "max_level":1},
     "log_national_woods":{
-        "name":"log all national woods",
+        "name":"Log all national woods",
         "button_placement":"object_woodchopper",
         "available":true,
         "affected_object":"object_woodchopper",
@@ -1738,7 +2164,7 @@ var upgrades= {
         "current_level":0,
         "max_level":1},
     "log_rainforest":{
-        "name":"log all global rainforests",
+        "name":"Log all global rainforests",
         "button_placement":"object_woodchopper",
         "available":true,
         "affected_object":"object_woodchopper",
@@ -1869,7 +2295,7 @@ var upgrades= {
         "cost":"money",
         "cost_amount_base":5000,
         "cost_level_increment_power":3,
-        "cost_amount":35000,
+        "cost_amount":5000,
         "current_level":0,
         "max_level":1},
     "enable_barracks":{
@@ -1962,6 +2388,21 @@ var upgrades= {
         "cost_amount":2750000,
         "current_level":0,
         "max_level":1},
+    "equip_screwdrivers":{
+        "name":"Equip precision screwdrivers",
+        "button_placement":"object_scrapper",
+        "available":true,
+        "affected_object":"object_scrapper",
+        "add_type":"adds_tick_electronics",
+        "add_amount":0.019,
+        "set_type":"none",
+        "set_amount":0,
+        "cost":"money",
+        "cost_amount_base":5000,
+        "cost_level_increment_power":3,
+        "cost_amount":90000,
+        "current_level":0,
+        "max_level":1},
     "metal_detector":{
         "name":"Equip metal detector",
         "button_placement":"object_scrapper",
@@ -1992,13 +2433,13 @@ var upgrades= {
         "cost_amount":9500000,
         "current_level":0,
         "max_level":1},
-    "return deposit bottles":{
+    "return_deposit_bottles":{
         "name":"Return deposit bottles",
         "button_placement":"object_scrapper",
         "available":true,
         "affected_object":"object_scrapper",
         "add_type":"adds_tick_money",
-        "add_amount":0.050,
+        "add_amount":0.090,
         "set_type":"cost_per_tick_plastics",
         "set_amount":0.003,
         "cost":"plastics",
@@ -2066,6 +2507,126 @@ var upgrades= {
         "cost_level_increment_power":3,
         "cost_amount":1500,
         "current_level":0,
+        "max_level":1},
+    "enable_mainbattletank":{
+        "name":"Research Main battle tank",
+        "button_placement":"object_tankfactory",
+        "available":true,
+        "affected_object":"object_mainbattletank",
+        "add_type":"none",
+        "add_amount":0,
+        "set_type":"visible",
+        "set_amount":true,
+        "cost":"intelligence",
+        "cost_amount_base":20000000,
+        "cost_level_increment_power":3,
+        "cost_amount":20000000,
+        "current_level":0,
+        "max_level":1},
+    "enable_howitzer":{
+        "name":"Research Howitzer",
+        "button_placement":"object_tankfactory",
+        "available":true,
+        "affected_object":"object_howitzer",
+        "add_type":"none",
+        "add_amount":0,
+        "set_type":"visible",
+        "set_amount":true,
+        "cost":"intelligence",
+        "cost_amount_base":850000000,
+        "cost_level_increment_power":3,
+        "cost_amount":850000000,
+        "current_level":0,
+        "max_level":1},
+    "enable_roboticsfactory":{
+        "name":"Open Robotics factory",
+        "button_placement":"object_headquarters",
+        "available":true,
+        "affected_object":"object_roboticsfactory",
+        "add_type":"none",
+        "add_amount":0,
+        "set_type":"visible",
+        "set_amount":true,
+        "cost":"electronics",
+        "cost_amount_base":0,
+        "cost_level_increment_power":3,
+        "cost_amount":2500,
+        "current_level":0,
+        "max_level":1},
+    "enable_supercomputer":{
+        "name":"Research Supercomputer",
+        "button_placement":"object_roboticsfactory",
+        "available":true,
+        "affected_object":"object_supercomputer",
+        "add_type":"none",
+        "add_amount":0,
+        "set_type":"visible",
+        "set_amount":true,
+        "cost":"money",
+        "cost_amount_base":200000,
+        "cost_level_increment_power":3,
+        "cost_amount":200000,
+        "current_level":0,
+        "max_level":1},
+    "install_1024_core_cpu":{
+        "name":"Install 1024-core processors",
+        "button_placement":"object_supercomputer",
+        "available":true,
+        "affected_object":"object_supercomputer",
+        "add_type":"adds_tick_intelligence",
+        "add_amount":9,
+        "set_type":"none",
+        "set_amount":true,
+        "cost":"electronics",
+        "cost_amount_base":700000,
+        "cost_level_increment_power":3,
+        "cost_amount":700000,
+        "current_level":0,
+        "max_level":1},
+    "install_fusion_laser_cpu":{
+        "name":"Install Laser-fusion processors",
+        "button_placement":"object_supercomputer",
+        "available":true,
+        "affected_object":"object_supercomputer",
+        "add_type":"adds_tick_intelligence",
+        "add_amount":290,
+        "set_type":"none",
+        "set_amount":true,
+        "cost":"electronics",
+        "cost_amount_base":19000000,
+        "cost_level_increment_power":3,
+        "cost_amount":19000000,
+        "current_level":0,
+        "max_level":1},
+    "enable_3dprinter":{
+        "name":"Research Industrial 3D printer",
+        "button_placement":"object_roboticsfactory",
+        "available":true,
+        "affected_object":"object_3dprinter",
+        "add_type":"none",
+        "add_amount":0,
+        "set_type":"visible",
+        "set_amount":true,
+        "cost":"money",
+        "cost_amount_base":100000,
+        "cost_level_increment_power":3,
+        "cost_amount":100000,
+        "current_level":0,
+        "max_level":1},
+    "install_bigger_nozzles":{
+        "name":"Install bigger nozzles",
+        "button_placement":"object_3dprinter",
+        "available":true,
+        "affected_object":"object_3dprinter",
+        "add_type":"adds_tick_money",
+        "add_amount":19.5,
+        "set_type":"cost_per_tick_plastics",
+        "set_amount":1.5,
+        "cost":"electronics",
+        "cost_amount_base":1000000,
+        "cost_level_increment_power":3,
+        "cost_amount":1000000,
+        "current_level":0,
         "max_level":1}
 };
 
@@ -2126,13 +2687,18 @@ function buildupGameScreen(){
     X += '<div class="currencies">';
     for (var cur in player_currency) {
         if (player_currency.hasOwnProperty(cur)) {
-            X += '<div class="currency_title">' + player_currency_names[cur] + '<div class="currency" id="currency_' + cur + '">0</div></div>';
+            X += '<div class="currency_title">' + player_currency_names[cur] + '<div class="currency" id="currency_' + cur + '">0</div>' +
+                '<div class="currency_tick" id="delta_currency_' + cur + '">' +
+                '<div id="tick_indicator_' + cur + '" class="tick_indicator tick_neutral"></div>' +
+                '<span class="delta_currency_amount" id="delta_currency_amount_' + cur + '" class="">#</span>' +
+                '</div>' +
+                '</div>';
         }
     }
     X += '</div>';
     for (var obj in objects) {
         if (objects.hasOwnProperty(obj)) {
-        X += '<div id="main_' + obj + '" class="object object_div ' + obj + '">' +
+            X += '<div id="main_' + obj + '" class="object object_div ' + obj + '">' +
                 '<div class="object_content" id="' + obj + '">' +
                 '<div class="object_title">' + objects[obj]["amount_text"] + ' <span class="amount" id="amount_' + obj + '">0</span></div>' +
                 '<div class="buy_info subtractions" id="buildcost_' + obj + '"></div>' +
@@ -2142,27 +2708,27 @@ function buildupGameScreen(){
                 '<div class="object_info" id="info_house">' + objects_descriptions[obj] + '</div>' +
                 '<br />' +
                 '<div class="object_btn_group">';
-                    if(objects[obj]["buyable"] === true) {
-                        X += '<button onclick="buyClick(\'' + obj + '\',\'1\')" class="button buy" id="buy_' + obj + '">' + objects[obj]["build_text"] + '</button>' +
-                             '<button onclick="buyClick(\'' + obj + '\',\'10\')" class="button buy" id="buy_' + obj + '">x10</button>' +
-                             '<button onclick="buyClick(\'' + obj + '\',\'100\')" class="button buy" id="buy_' + obj + '">x100</button>' +
-                             '<button onclick="buyClick(\'' + obj + '\',\'500\')" class="button buy" id="buy_' + obj + '">x500</button>' +
-                             '<button onclick="autoBuyClick(\'' + obj + '\')" class="button autobuy" id="autobuy_' + obj + '">Automatic</button>';
+            if(objects[obj]["buyable"] === true) {
+                X += '<button onclick="buyClick(\'' + obj + '\',\'1\')" class="button buy" id="buy_' + obj + '">' + objects[obj]["build_text"] + '</button>' +
+                    '<button onclick="buyClick(\'' + obj + '\',\'10\')" class="button buy" id="buy_' + obj + '">x10</button>' +
+                    '<button onclick="buyClick(\'' + obj + '\',\'100\')" class="button buy" id="buy_' + obj + '">x100</button>' +
+                    '<button onclick="buyClick(\'' + obj + '\',\'500\')" class="button buy" id="buy_' + obj + '">x500</button>' +
+                    '<button onclick="autoBuyClick(\'' + obj + '\')" class="button autobuy" id="autobuy_' + obj + '">Automatic</button>';
+            }
+            for (var upg in upgrades) {
+                if (upgrades.hasOwnProperty(upg)) {
+                    if(upgrades[upg]["button_placement"] === obj){
+                        Y = getUpgradeButtonText(upg);
+                        X += '<button onclick="upgradeClick(\'' + upg + '\')" class="button upgrade" id="upgrade_' + upg + '">' + Y + '</button>';
                     }
-                    for (var upg in upgrades) {
-                        if (upgrades.hasOwnProperty(upg)) {
-                            if(upgrades[upg]["button_placement"] === obj){
-                                Y = getUpgradeButtonText(upg);
-                                X += '<button onclick="upgradeClick(\'' + upg + '\')" class="button upgrade" id="upgrade_' + upg + '">' + Y + '</button>';
-                            }
-                        }
-                    }
-           X += '</div>' +
+                }
+            }
+            X += '</div>' +
                 '</div>' +
-             '</div>';
+                '</div>';
         }
     }
-    X += '<div class="footer">Autosaves every 15 sec - V' + versioning["version"] + ' build ' + versioning["build"] + ' - ' +versioning["contact"]+ ' - <a href="techtree.html">Techtree</a>&nbsp;&nbsp;<a href="changelog.html">Changelog</a>&nbsp;&nbsp;<a href="https://donorbox.org/donate-cannonfodder">Donate</a></div>';
+    X += '<div class="footer">V' + versioning["version"] + ' build ' + versioning["build"] + ' - ' +versioning["contact"]+ ' - <a href="techtree.html">Techtree</a>&nbsp;&nbsp;<a href="changelog.html">Changelog</a>&nbsp;&nbsp;<a href="https://donorbox.org/donate-cannonfodder">Donate</a></div>';
     $( '#game_screen' ).html(X);
     if (autobuyer["object"] !== "none") {
         $("#autobuy_" + autobuyer["object"]).addClass("autobuy_active");
@@ -2181,7 +2747,6 @@ function gameLoop() {
     updateHousing();           //Housing only
     updateCurrencyTicks();
     getCurrentHousing();
-    updateCurrency();
     triggerAutobuy();
     updateBuildingDependencies();
     updateObjectAmounts();
@@ -2233,6 +2798,14 @@ function updateCurrencyTicks(){
             }
         }
     }
+    updateCurrency();
+    for (var cur in player_currency) {
+        if (player_currency.hasOwnProperty(cur)) {
+            delta_per_tick[cur] = currency_per_tick[cur] - cost_per_tick_total[cur];
+            cost_per_tick_total[cur] = 0;
+            currency_per_tick[cur] = currency_per_tick_base[cur];
+        }
+    }
 }
 
 
@@ -2247,6 +2820,7 @@ function checkCostsPerTickLiquidity(objectName, amount){
                 }
             }
         }
+        cost_per_tick_total[key] += objects[objectName]["cost_per_tick_" + key] * amount;
     }
     if (finetune === true){
         var lowestAmount = amount;
@@ -2278,19 +2852,38 @@ function updateCurrency(){
         if (player_currency.hasOwnProperty(key)) {
             if(update_currency[key] !== 0)
                 player_currency[key] += update_currency[key];
-                player_currency[key] += currency_per_tick[key];
-                update_currency[key] = 0;
-                if(key === "housing"){
-                    $("#currency_" + key).html(currentHousing+"/"+Math.trunc(player_currency[key]));
+            player_currency[key] += currency_per_tick[key];
+            update_currency[key] = 0;
+            if(key === "housing"){
+                $("#currency_" + key).html(formatCurrencyValues(currentHousing)+"/"+formatCurrencyValues(player_currency[key]));
+            }
+            else {
+                $("#currency_" + key).html(formatCurrencyValues(player_currency[key]));
+            }
+            var tickIndicator = "#tick_indicator_" + key;
+            if(delta_per_tick[key] > 0) {
+                if( $( tickIndicator ).hasClass("tick_negative") || $( tickIndicator ).hasClass("tick_neutral")) {
+                    $(tickIndicator).removeClass("tick_negative");
+                    $(tickIndicator).removeClass("tick_neutral");
                 }
-                else {
-                    $("#currency_" + key).html(Math.trunc(player_currency[key]));
+                $( tickIndicator ).addClass("tick_positive");
+            }
+            else if(delta_per_tick[key] < 0){
+                if( $( tickIndicator ).hasClass("tick_positive") || $( tickIndicator ).hasClass("tick_neutral")) {
+                    $(tickIndicator).removeClass("tick_positive");
+                    $(tickIndicator).removeClass("tick_neutral");
                 }
-        }
-    }
-    for (var baseCurrency in currency_per_tick){
-        if (currency_per_tick.hasOwnProperty(baseCurrency)) {
-            currency_per_tick[baseCurrency] = currency_per_tick_base[baseCurrency];
+                $( tickIndicator ).addClass("tick_negative");
+            }
+            else{
+                if( $( tickIndicator ).hasClass("tick_negative") || $( tickIndicator ).hasClass("tick_negative")) {
+                    $(tickIndicator).removeClass("tick_negative");
+                    $(tickIndicator).removeClass("tick_positive");
+                }
+                $( tickIndicator ).addClass("tick_neutral");
+
+            }
+            $("#delta_currency_amount_" + key).html(formatCurrencyValues(delta_per_tick[key] * 10));
         }
     }
 }
@@ -2362,6 +2955,7 @@ function updateObjectBuildcost(){
             for (var key in player_currency) {
                 if (player_currency.hasOwnProperty(key)) {
                     if (objects[objectName][key] > 0) {
+                        costValueToDisplay = formatCurrencyValues(objects[objectName][key]);
                         hide["#buildcost_"] = false;
                         if(buildcostSet === 0){
                             $( "#buildcost_" + objectName ).html('Building cost:<br />');
@@ -2370,7 +2964,7 @@ function updateObjectBuildcost(){
                         if(key === "housing") {
                             if(objects[objectName]["consumes"] !== "none") {
                                 if ((objects[objectName]["housing"] - objects[objects[objectName]["consumes"]]["housing"]) > (player_currency["housing"] - currentHousing)) {
-                                    $("#buildcost_" + objectName).append(objects[objectName][key] + " " + player_currency_names[key] + "<br />");
+                                    $("#buildcost_" + objectName).append(costValueToDisplay + " " + player_currency_names[key] + "<br />");
                                 }
                                 else{
                                     $("#buildcost_" + objectName).append("<b>" + objects[objectName][key] + " " + player_currency_names[key] + "</b><br />");
@@ -2378,18 +2972,18 @@ function updateObjectBuildcost(){
                             }
                             else {
                                 if (objects[objectName]["housing"] > (player_currency["housing"] - currentHousing)) {
-                                    $("#buildcost_" + objectName).append(objects[objectName][key] + " " + player_currency_names[key] + "<br />");
+                                    $("#buildcost_" + objectName).append(costValueToDisplay + " " + player_currency_names[key] + "<br />");
                                 }
                                 else{
-                                    $("#buildcost_" + objectName).append("<b>" + objects[objectName][key] + " " + player_currency_names[key] + "</b><br />");
+                                    $("#buildcost_" + objectName).append("<b>" + costValueToDisplay + " " + player_currency_names[key] + "</b><br />");
                                 }
                             }
                         }
                         else if(player_currency[key] >= objects[objectName][key]){
-                            $("#buildcost_" + objectName).append("<b>" + objects[objectName][key] + " " + player_currency_names[key] + "</b><br />");
+                            $("#buildcost_" + objectName).append("<b>" + costValueToDisplay + " " + player_currency_names[key] + "</b><br />");
                         }
                         else {
-                            $("#buildcost_" + objectName).append(objects[objectName][key] + " " + player_currency_names[key] + "<br />");
+                            $("#buildcost_" + objectName).append(costValueToDisplay + " " + player_currency_names[key] + "<br />");
                         }
                     }
                     if (objects[objectName]["cost_per_tick_"+key] > 0) {
@@ -2399,7 +2993,7 @@ function updateObjectBuildcost(){
                             $( costPerTick ).html('Cost per second:<br />');
                             costTickSet = 1;
                         }
-                        $( costPerTick ).append((objects[objectName]["cost_per_tick_"+key]*10).toFixed(2) + " " + player_currency_names[key] + "<br />");
+                        $( costPerTick ).append(formatCurrencyValues((objects[objectName]["cost_per_tick_"+key]*10)) + " " + player_currency_names[key] + "<br />");
                     }
                     if (objects[objectName]["adds_"+key] > 0) {
                         hide["#adds_"] = false;
@@ -2408,7 +3002,7 @@ function updateObjectBuildcost(){
                             $( addsCurrency ).html('Adds:<br />');
                             addsSet = 1;
                         }
-                        $( addsCurrency ).append(objects[objectName]["adds_"+key] + " " + player_currency_names[key] + "<br />");
+                        $( addsCurrency ).append(formatCurrencyValues(objects[objectName]["adds_"+key]) + " " + player_currency_names[key] + "<br />");
                     }
                     if (objects[objectName]["adds_tick_"+key] > 0) {
                         hide["#adds_per_tick_"] = false;
@@ -2417,7 +3011,7 @@ function updateObjectBuildcost(){
                             $( addsTickCurrency ).html('Adds per second:<br />');
                             addsTickSet = 1;
                         }
-                        $( addsTickCurrency ).append((objects[objectName]["adds_tick_"+key]*10).toFixed(2) + " " + player_currency_names[key] + "<br />");
+                        $( addsTickCurrency ).append((formatCurrencyValues(objects[objectName]["adds_tick_"+key]*10)) + " " + player_currency_names[key] + "<br />");
                     }
                 }
             }
@@ -2568,10 +3162,10 @@ function autoSaveWebStorage() {
 //
 function getUpgradeButtonText(upgradeName){
     if((upgrades[upgradeName]["current_level"] !== upgrades[upgradeName]["max_level"]) && (upgrades[upgradeName]["max_level"] === 1)) {
-        tX = upgrades[upgradeName]["name"] + '<br>' + upgrades[upgradeName]["cost_amount"] + ' ' + player_currency_names[upgrades[upgradeName]["cost"]];
+        tX = upgrades[upgradeName]["name"] + '<br>' + formatCurrencyValues(upgrades[upgradeName]["cost_amount"]) + ' ' + player_currency_names[upgrades[upgradeName]["cost"]];
     }
     else if(upgrades[upgradeName]["current_level"] !== upgrades[upgradeName]["max_level"]) {
-        tX = upgrades[upgradeName]["name"] + ' [lvl ' + upgrades[upgradeName]["current_level"] + ']<br>' + upgrades[upgradeName]["cost_amount"] + ' ' + player_currency_names[upgrades[upgradeName]["cost"]];
+        tX = upgrades[upgradeName]["name"] + ' [lvl ' + upgrades[upgradeName]["current_level"] + ']<br>' + formatCurrencyValues(upgrades[upgradeName]["cost_amount"]) + ' ' + player_currency_names[upgrades[upgradeName]["cost"]];
     }
     else if(upgrades[upgradeName]["current_level"] > 1){
         tX = '<span class="done">' + upgrades[upgradeName]["name"] + ' [MAX]</span>';
@@ -2580,4 +3174,61 @@ function getUpgradeButtonText(upgradeName){
         tX = '<span class="done">' + upgrades[upgradeName]["name"] + '</span>';
     }
     return tX;
+}
+
+function formatCurrencyValues(value){
+    var decA = 0;
+    var decB = 1;
+    var decC = 2;
+    if((value < 1000) && (value % 1 === 0)){
+        decB = 0;
+        decC = 0;
+    }
+    else if((value < 1000000) && ((value/1000) % 1 === 0)){
+        decB = 0;
+        decC = 0;
+    }
+    else if((value < 1000000000) && ((value/1000000) % 1 === 0)){
+        decB = 0;
+        decC = 0;
+    }
+    else if(value > 9999999999){
+        decB = 0;
+        decC = 0;
+    }
+    if (value > 9999999999){
+        returnValue = (value/1000000000).toFixed(decA) + "B";
+    }
+    else if (value > 9999999999){
+        returnValue = (value/1000000000).toFixed(decB) + "B";
+    }
+    else if (value > 999999999){
+        returnValue = (value/1000000000).toFixed(decC) + "B";
+    }
+    else if (value > 99999999){
+        returnValue = (value/1000000).toFixed(decA) + "M";
+    }
+    else if (value > 9999999){
+        returnValue = (value/1000000).toFixed(decB) + "M";
+    }
+    else if (value > 999999){
+        returnValue = (value/1000000).toFixed(decC) + "M";
+    }
+    else if (value > 99999){
+        returnValue = (value/1000).toFixed(decA) + "K";
+    }
+    else if (value > 9999){
+        returnValue = (value/1000).toFixed(decB) + "K";
+    }
+    else if (value > 999){
+        returnValue = (value/1000).toFixed(decC) + "K";
+    }
+    else if (value > 99){
+        return value.toFixed(decB);
+    }
+    else{
+        return value.toFixed(decC);
+    }
+    return returnValue;
+
 }
