@@ -1,22 +1,37 @@
 ul, li{
     font-size: 12px;
     font-weight: normal;
+    text-decoration: initial;
     font-family: Verdana, sans-serif;
+}
+
+.prime{
+    font-weight: bold;
+    color: darkgreen;
+    text-decoration: underline dotted darkgreen;
 }
 
 .object{
     font-weight: bold;
     color: darkgreen;
+    text-decoration: initial;
 }
 
 .upgrade{
-    color: darkblue;
+    font-weight: normal;
+    color: darkgreen;
+    text-decoration: initial;
 }
 
 
 .annotation{
     opacity: 0.5;
     font-weight: normal;
+    text-decoration: initial;
+}
+
+.warning{
+    color: red;
 }
 
 h3{

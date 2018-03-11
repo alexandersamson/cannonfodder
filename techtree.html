@@ -6,20 +6,41 @@
     <link rel="stylesheet" href="css/techtree.css">
 </head>
 <body>
-<h3>Cannonfodder Techtree</h3>
+<h3>Cannonfodder Techtree - Version 1.1</h3>
 <ul>
-    <li class="object">Headquarters
+    <li class ="object"><span class="prime">Prime buildings (not buildable)</span></li>
+    <li class ="object">Buildables</li>
+    <li class ="upgrade">Upgrades</li>
+    <li class ="object"><span class="annotation">[Informative annotation]</span></li>
+    <li class ="object"><span class="annotation warning">[Warning annotation]</span></li>
+</ul>
+<ul>
+    <li class="object"><span class="prime">Headquarters</span>
         <ul>
-            <li class="object">House</li>
+            <li class="object">House
                 <ul>
-                    <li class="object">Mansion <span class="annotation">[Requires 10+ Houses]</span>
                     <li class="upgrade">Self Expanding Walls <span class="annotation">[20 upgrade levels]</span></li>
+                    <li class="object">Mansion <span class="annotation">[Requires 10+ Houses]</span>
                         <ul>
-                            <li class="object">City Hall <span class="annotation">[Requires 10+ Mansions]</span></li>
                             <li class="upgrade">Use Appealing Architecture <span class="annotation">[20 upgrade levels]</span></li>
+                            <li class="object">City Hall <span class="annotation">[Requires 10+ Mansions]</span>
+                                <ul>
+                                    <li class="upgrade">Launch Electronics Recycling Program</li>
+                                    <li class="object">Senate Building <span class="annotation">[Requires 10+ City Halls]</span>
+                                        <ul>
+                                            <li class="object">World Forum Building <span class="annotation">[Requires 10+ Senate Buildings]</span>
+                                                <ul>
+                                                    <li class="object">World Government Building <span class="annotation">[Requires 10+ World Forum Buildings]</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
+            </li>
             <li class="object">Citizen
                 <ul>
                     <li class="upgrade">Teach Farming
@@ -67,9 +88,9 @@
                     <li class="upgrade">Increase Taxes <span class="annotation">[500 upgrade levels]</span></li>
                 </ul>
             </li>
-            <li class="upgrade">Open Oil Drilling Company<span class="annotation"> [Be careful: Costs 25 Moral/sec]</span>
+            <li class="upgrade">Open Oil Drilling Company<span class="annotation warning"> [Be careful: Costs 25 Moral/sec]</span>
                 <ul>
-                    <li class="object">Oil Drilling Company
+                    <li class="object"><span class="prime">Oil Drilling Company</span>
                         <ul>
                             <li class="object">Oil Well
                                 <ul>
@@ -78,7 +99,11 @@
                             </li>
                             <li class="upgrade">Acquire Shipyard
                                 <ul>
-                                    <li class="object">Oil Tanker</li>
+                                    <li class="object">Oil Tanker
+                                        <ul>
+                                            <li class="upgrade">Sail Through Enemy Waters <span class="annotation warning"> [Be careful: Costs 20 Firepower/sec]</span></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="upgrade">Research Oil Refinery
@@ -97,7 +122,7 @@
             </li>
             <li class="upgrade">Open Research Facility
                 <ul>
-                    <li class="object">Research Facility
+                    <li class="object"><span class="prime">Research Facility</span>
                         <ul>
                             <li class="object">Scientist</li>
                         </ul>
@@ -106,7 +131,7 @@
             </li>
             <li class="upgrade">Open Barracks
                 <ul>
-                    <li class="object">Barracks
+                    <li class="object"><span class="prime">Barracks</span>
                         <ul>
                             <li class="object">Soldier
                                 <ul>
@@ -134,7 +159,7 @@
                 </ul>
             <li class="upgrade">Open Clandestine Operations Facility
                 <ul>
-                    <li class="object">Clandestine Operations Facility
+                    <li class="object"><span class="prime">Clandestine Operations Facility</span>
                         <ul>
                             <li class="object">Traffick Citizen
                                 <ul>
@@ -143,7 +168,11 @@
                             </li>
                             <li class="upgrade">Learn Black Hat Hacking
                                 <ul>
-                                    <li class="object">Black Hat Hacker</li>
+                                    <li class="object">Black Hat Hacker
+                                        <ul>
+                                            <li class="upgrade">Use Quantum Technology</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -152,7 +181,7 @@
             </li>
             <li class="upgrade">Open Tank Factory
                 <ul>
-                    <li class="object">Tank Factory
+                    <li class="object"><span class="prime">Tank Factory</span>
                         <ul>
                             <li class="object">Light Tank
                                 <ul>
@@ -166,7 +195,11 @@
                             </li>
                             <li class="upgrade">Research Howitzer
                                 <ul>
-                                    <li class="object">Howitzer</li>
+                                    <li class="object">Howitzer
+                                        <ul>
+                                            <li class="upgrage">Load Nuclear Shells <span class="annotation warning"> [Be careful: Costs 1000 Moral/sec]</span></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -175,13 +208,21 @@
             </li>
             <li class="upgrade">Open Robotics Factory
                 <ul>
-                    <li class="object">Robotics Factory
+                    <li class="object"><span class="prime">Robotics Factory</span>
                         <ul>
                             <li class="upgrade">Research Supercomputer
                                 <ul>
                                     <li class="object">Supercomputer
                                         <ul>
                                             <li class="upgrade">Install 1024-core Processors</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="upgrade">Research Quantum Computer
+                                <ul>
+                                    <li class="object">Quantumcomputer
+                                        <ul>
                                             <li class="upgrade">Install Laser-fusion Processors</li>
                                         </ul>
                                     </li>
