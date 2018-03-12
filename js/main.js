@@ -1,4 +1,4 @@
-var versioning = {"version":"1.2","build":11,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"1.2","build":12,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
@@ -1651,7 +1651,7 @@ var objects = {"object_headquarters": {
         "adds_tick_wood": 0,
         "adds_tick_electronics": 0,
         "adds_tick_intelligence": 0,
-        "adds_tick_moral": 0.001,
+        "adds_tick_moral": 0,
         "adds_tick_firepower":0.1,
         "hitpoints": 50,
         "damage": 30,
@@ -1860,10 +1860,10 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0.5,
+        "cost_per_tick_money": 1,
         "cost_per_tick_food": 0,
         "cost_per_tick_housing": 0,
-        "cost_per_tick_metal": 0,
+        "cost_per_tick_metal": 0.005,
         "cost_per_tick_plastics": 0,
         "cost_per_tick_wood": 0,
         "cost_per_tick_oil": 0.01,
@@ -1920,10 +1920,10 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 2,
+        "cost_per_tick_money": 25,
         "cost_per_tick_food": 0,
         "cost_per_tick_housing": 0,
-        "cost_per_tick_metal": 0,
+        "cost_per_tick_metal": 0.05,
         "cost_per_tick_plastics": 0,
         "cost_per_tick_wood": 0,
         "cost_per_tick_oil": 0.5,
@@ -1952,7 +1952,7 @@ var objects = {"object_headquarters": {
         "adds_tick_electronics": 0,
         "adds_tick_intelligence": 0,
         "adds_tick_moral": 0,
-        "adds_tick_firepower":250,
+        "adds_tick_firepower":100,
         "hitpoints": 9000,
         "damage": 3000,
         "speed": 100,
@@ -1980,10 +1980,10 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 25,
+        "cost_per_tick_money": 500,
         "cost_per_tick_food": 0,
         "cost_per_tick_housing": 0,
-        "cost_per_tick_metal": 0,
+        "cost_per_tick_metal": 1,
         "cost_per_tick_plastics": 0,
         "cost_per_tick_wood": 0,
         "cost_per_tick_oil": 5,
@@ -3638,11 +3638,11 @@ function formatCurrencyValues(value){
         decB = 0;
         decC = 0;
     }
-    else if(value > 9999999999){
+    else if(value > 99999999999){
         decB = 0;
         decC = 0;
     }
-    if (value > 9999999999){
+    if (value > 99999999999){
         returnValue = (value/1000000000).toFixed(decA) + "B";
     }
     else if (value > 9999999999){
