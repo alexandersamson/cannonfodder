@@ -2140,7 +2140,7 @@ var objects = {"object_headquarters": {
         "buildspeed": 1,
         "consumes": "none"
     },
-    "object_quantumomputer": {
+    "object_quantumcomputer": {
         "name":"Quantum computer",
         "build_text":"Build quantum computer",
         "amount_text":"Quantum computers",
