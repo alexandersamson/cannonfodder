@@ -314,7 +314,7 @@ textarea {
     overflow:hidden;
     margin-bottom:4px;
     z-index: 2;
-    opacity:0.90;
+    opacity:0.95;
     font-family: Verdana, sans-serif;
     background-color: black;
     font-size: 9px;
@@ -336,6 +336,21 @@ textarea {
     margin-left: -3px;
     margin-right: -3px;
     text-align: center;
+    transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -webkit-transition: background-color 0.4s ease;
+}
+
+.insufficient {
+    background-color: #bb0000;
+}
+
+.sufficient {
+    background-color: #003f00;
+}
+
+.reset_mutation{
+     background-color: black;
 }
 
 .currency{

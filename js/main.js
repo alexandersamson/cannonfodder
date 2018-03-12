@@ -1,4 +1,4 @@
-var versioning = {"version":"1.2","build":12,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"1.2","build":13,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
@@ -2421,7 +2421,7 @@ var upgrades= {
         "cost":"metal",
         "cost_amount_base":1,
         "cost_level_increment_power":1,
-        "cost_amount":350000,
+        "cost_amount":180000,
         "current_level":0,
         "max_level":1},
     "equip_tractors":{
@@ -2436,7 +2436,7 @@ var upgrades= {
         "cost":"oil",
         "cost_amount_base":1,
         "cost_level_increment_power":1,
-        "cost_amount":70000,
+        "cost_amount":500000,
         "current_level":0,
         "max_level":1},
     "teach_lumbering":{
@@ -2572,6 +2572,21 @@ var upgrades= {
         "cost_amount_base":1,
         "cost_level_increment_power":1,
         "cost_amount":25000,
+        "current_level":0,
+        "max_level":1},
+    "serve_espresso":{
+        "name":"Serve Double espressos",
+        "button_placement":"object_servant",
+        "available":true,
+        "affected_object":"object_servant",
+        "add_type":"adds_tick_moral",
+        "add_amount":0.006,
+        "set_type":"cost_per_tick_food",
+        "set_amount":0.1,
+        "cost":"food",
+        "cost_amount_base":1000000,
+        "cost_level_increment_power":3,
+        "cost_amount":1000000,
         "current_level":0,
         "max_level":1},
     "increase_taxes":{
@@ -3063,6 +3078,9 @@ var gameIntervalTimer = 100;
 var autobuyer = {"object":"none","rate":1,"counter_set":9,"counter_value":0,"simultanous_buys":10};
 var autoSaveCounter = 0;
 var housingAdded = 0;
+var mutationCounter = {};
+var timerLong = 10;
+var timerShort = 5;
 
 
 
@@ -3104,9 +3122,9 @@ function loadWebstorage(){
                     objects["object_house"]["owned"] = loadedFile["objects"]["object_house"]["owned"];
                     objects["object_mansion"]["owned"] = loadedFile["objects"]["object_mansion"]["owned"];
                     objects["object_cityhall"]["owned"] = loadedFile["objects"]["object_cityhall"]["owned"];
-                    objects["object_senate"]["owned"] = loadedFile["objects"]["object_senate"]["owned"];
-                    objects["object_worldforum"]["owned"] = loadedFile["objects"]["object_worldforum"]["owned"];
-                    objects["object_worldgovernment"]["owned"] = loadedFile["objects"]["object_worldgovernment"]["owned"];
+                    objects["object_senate"]["owned"] = loadedFile["objects"]["object_senate"]["owned"] || 0;
+                    objects["object_worldforum"]["owned"] = loadedFile["objects"]["object_worldforum"]["owned"] || 0;
+                    objects["object_worldgovernment"]["owned"] = loadedFile["objects"]["object_worldgovernment"]["owned"] || 0;
                     saveFile = btoa(JSON.stringify({"versioning":versioning,"upgrades":upgrades,"objects":objects,"currency":player_currency,"autobuy":autobuyer}));
                     localStorage.setItem("cannonfodder_savegame", saveFile);
                     window.location.reload(true);
@@ -3129,7 +3147,7 @@ function buildupGameScreen(){
     X += '<div class="currencies">';
     for (var cur in player_currency) {
         if (player_currency.hasOwnProperty(cur)) {
-            X += '<div class="currency_title">' + player_currency_names[cur] + '<div class="currency" id="currency_' + cur + '">0</div>' +
+            X += '<div class="currency_title" id="currency_title_' + cur + '">' + player_currency_names[cur] + '<div class="currency" id="currency_' + cur + '">0</div>' +
                 '<div class="currency_tick" id="delta_currency_' + cur + '">' +
                 '<div id="tick_indicator_' + cur + '" class="tick_indicator tick_neutral"></div>' +
                 '<span class="delta_currency_amount" id="delta_currency_amount_' + cur + '" class="">#</span>' +
@@ -3194,6 +3212,7 @@ function gameLoop() {
     updateObjectAmounts();
     updateObjectBuildcost();
     setAdaptiveBuildPrices();
+    checkMutationCounters();
     autoSaveWebStorage();       //last item
 }
 
@@ -3501,6 +3520,7 @@ function buyClick(objectName, times){
         for (var key in player_currency) {
             if (player_currency.hasOwnProperty(key)) {
                 if (objects[objectName][key] > player_currency[key]) {
+                    addMutationCounter(key, false, timerLong);
                     return;
                 }
                 if (objects[objectName]["consumes"] !== "none") {
@@ -3508,13 +3528,18 @@ function buyClick(objectName, times){
                         return;
                     }
                     if ((objects[objectName]["housing"] - objects[objects[objectName]["consumes"]]["housing"]) > (player_currency["housing"] - currentHousing)) {
+                        addMutationCounter("housing", false, timerLong);
                         return;
                     }
                 }
                 else {
                     if (objects[objectName]["housing"] > (player_currency["housing"] - currentHousing)) {
+                        addMutationCounter("housing", false, timerLong);
                         return;
                     }
+                }
+                if (objects[objectName][key] > 0){
+                    addMutationCounter(key, true, timerShort);
                 }
             }
         }
@@ -3540,6 +3565,7 @@ function buyClick(objectName, times){
 
 function upgradeClick(upgradeName){
     if(player_currency[upgrades[upgradeName]["cost"]] >= upgrades[upgradeName]["cost_amount"]){
+        addMutationCounter(upgrades[upgradeName]["cost"], true, timerShort);
         if(upgrades[upgradeName]["current_level"] < upgrades[upgradeName]["max_level"]){
             upgrades[upgradeName]["current_level"] += 1;
             player_currency[upgrades[upgradeName]["cost"]] -= upgrades[upgradeName]["cost_amount"];
@@ -3557,6 +3583,9 @@ function upgradeClick(upgradeName){
 
         }
 
+    }
+    else{
+        addMutationCounter(upgrades[upgradeName]["cost"], false, timerLong);
     }
 }
 
@@ -3586,6 +3615,33 @@ function setAdaptiveBuildPrices(){
     objects["object_worldforum"]["money"] = 775000000000 + (objects["object_worldforum"]["owned"] * 2200000000000);
     objects["object_worldforum"]["wood"] = 290000000 + (objects["object_worldforum"]["owned"] * 580000000);
     objects["object_worldforum"]["metal"] = 950000000 + (objects["object_worldforum"]["owned"] * 1900000000);
+}
+
+
+function checkMutationCounters(){
+    for (var mutation in mutationCounter) {
+        if (mutationCounter.hasOwnProperty(mutation)) {
+            var currencyId = '#currency_title_' + mutation;
+            if(mutationCounter[mutation]["ticks"] > 0){
+                mutationCounter[mutation]["ticks"] -= 1;
+                if((mutationCounter[mutation]["sufficient"] === true)&&($( currencyId ).hasClass( 'sufficient' ) === false)){
+                    $( currencyId ).addClass( 'sufficient' );
+                }
+                if((mutationCounter[mutation]["sufficient"] === false)&&($( currencyId ).hasClass( 'insufficient' ) === false)){
+                    $( currencyId ).addClass( 'insufficient' );
+                    if($( currencyId ).hasClass( 'sufficient' )) {
+                        $(currencyId).removeClass('sufficient');
+                    }
+                }
+            }
+            else{
+                if(($( currencyId ).hasClass( 'insufficient' )) || ($( currencyId ).hasClass( 'sufficient' ))) {
+                    $(currencyId).removeClass('insufficient');
+                    $(currencyId).removeClass('sufficient');
+                }
+            }
+        }
+    }
 }
 
 
@@ -3677,4 +3733,8 @@ function formatCurrencyValues(value){
     }
     return returnValue;
 
+}
+
+function addMutationCounter(currency, sufficient, timer){
+    mutationCounter[currency] = {"ticks":timer,"sufficient":sufficient};
 }
