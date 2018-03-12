@@ -2559,6 +2559,36 @@ var upgrades= {
         "cost_amount":10000,
         "current_level":0,
         "max_level":1},
+    "sell_subprime_mortgages":{
+        "name":"Sell Subprime mortgages",
+        "button_placement":"object_banker",
+        "available":true,
+        "affected_object":"object_banker",
+        "add_type":"adds_tick_money",
+        "add_amount":17.5,
+        "set_type":"moral",
+        "set_amount":500,
+        "cost":"moral",
+        "cost_amount_base":200000,
+        "cost_level_increment_power":1,
+        "cost_amount":200000,
+        "current_level":0,
+        "max_level":1},
+    "sell_cdo_tranches":{
+        "name":"Sell Risky CDO tranches",
+        "button_placement":"object_banker",
+        "available":true,
+        "affected_object":"object_banker",
+        "add_type":"adds_tick_money",
+        "add_amount":876.5,
+        "set_type":"cost_per_tick_moral",
+        "set_amount":0.1,
+        "cost":"moral",
+        "cost_amount_base":15000000,
+        "cost_level_increment_power":1,
+        "cost_amount":15000000,
+        "current_level":0,
+        "max_level":1},
     "teach_civilservice":{
         "name":"Teach civil service",
         "button_placement":"object_peasant",
@@ -3171,8 +3201,10 @@ function buildupGameScreen(){
             if(objects[obj]["buyable"] === true) {
                 X += '<button onclick="buyClick(\'' + obj + '\',\'1\')" class="button buy" id="buy_' + obj + '">' + objects[obj]["build_text"] + '</button>' +
                     '<button onclick="buyClick(\'' + obj + '\',\'10\')" class="button buy" id="buy_' + obj + '">x10</button>' +
+                    '<button onclick="buyClick(\'' + obj + '\',\'50\')" class="button buy" id="buy_' + obj + '">x50</button>' +
                     '<button onclick="buyClick(\'' + obj + '\',\'100\')" class="button buy" id="buy_' + obj + '">x100</button>' +
                     '<button onclick="buyClick(\'' + obj + '\',\'500\')" class="button buy" id="buy_' + obj + '">x500</button>' +
+                    '<button onclick="buyClick(\'' + obj + '\',\'1000\')" class="button buy" id="buy_' + obj + '">x1000</button>' +
                     '<button onclick="autoBuyClick(\'' + obj + '\')" class="button autobuy" id="autobuy_' + obj + '">Automatic</button>';
             }
             for (var upg in upgrades) {
