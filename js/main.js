@@ -1,4 +1,4 @@
-var versioning = {"version":"1.2","build":10,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"1.2","build":11,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
@@ -1431,7 +1431,7 @@ var objects = {"object_headquarters": {
         "owned":0,
         "money": 250,
         "food": 100,
-        "housing": 0,
+        "housing": 2,
         "metal": 0,
         "oil" : 0,
         "plastics": 0,
@@ -1440,7 +1440,7 @@ var objects = {"object_headquarters": {
         "intelligence": 0,
         "moral": 0,
         "firepower":0,
-        "cost_per_tick_money": 0.1,
+        "cost_per_tick_money": 0.15,
         "cost_per_tick_food": 0.016,
         "cost_per_tick_housing": 0,
         "cost_per_tick_metal": 0,
@@ -2277,7 +2277,7 @@ objects_descriptions = {
     "object_woodchopper":"These guys know how to swing an axe. Be careful they don't swing it towards you.",
     "object_ironminer":"These guys like to be in deep dark holes. To mine iron. Obviously.",
     "object_servant":"They know how to make a cup of barely drinkable coffee.",
-    "object_scrapper":"They smell like shit, but brings home a lot of resources. But yeah, that's where you will pay for. Good thing is: They sleep at the dump yard.",
+    "object_scrapper":"They smell like shit, but brings home a lot of resources. But yeah, that's where you will pay for. Good thing is: They sleep at the dump yard and they only need 2 square meters to store their gear.",
     "object_scientist":"Socially awkward, but smarter than one stone. They do ransack your wallet though.",
     "object_soldier":"Your general purpose cannon fodder.",
     "object_sergeant":"Sir, yes sir!",
