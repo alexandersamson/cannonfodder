@@ -18,7 +18,7 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css?V1.2_build13">
+        <link rel="stylesheet" href="css/main.css?V1.3_build15">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -31,7 +31,7 @@
         <script src="js/jquery-3.3.1.min/jquery-3.3.1.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min/jquery-3.3.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js?V1.2_build13 "></script>
+        <script src="js/main.js?V1.3_build15 "></script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>

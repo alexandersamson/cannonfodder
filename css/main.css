@@ -481,6 +481,7 @@ textarea {
 
 .button{
     height: 40px;
+    min-width: 100px;
     float:left;
     font-family: Verdana, sans-serif;
     background-color: ghostwhite;
@@ -493,7 +494,9 @@ textarea {
     box-shadow: none;
 }
 .button:hover{
-    opacity: 0.5;
+    background-color: black;
+    color: white;
+    opacity: 0.85;
     cursor: pointer;
 }
 
@@ -558,4 +561,35 @@ textarea {
     display: none;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
 
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #2f2f2f;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 0;
+    bottom:40px;
+    left: 0;
+    float:left;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 2;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    width: 100%;
+    min-width: 120px;
+}
+
+.tooltiptext:hover{
+    visibility: hidden;
+    width: 0%;
+    min-width: 0px;
+}
