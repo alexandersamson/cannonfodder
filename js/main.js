@@ -3968,7 +3968,7 @@ function buildupGameScreen(){
                 if (upgrades.hasOwnProperty(upg)) {
                     if(upgrades[upg]["button_placement"] === obj){
                         Y = getUpgradeButtonText(upg);
-                        X += '<button onclick="upgradeClick(\'' + upg + '\',\'true\')" class="button upgrade tooltip" id="upgrade_' + upg + '">' + Y + '' +
+                        X += '<button onclick="upgradeClick(\'' + upg + '\',true)" class="button upgrade tooltip" id="upgrade_' + upg + '">' + Y + '' +
                             '<span class="tooltiptext">' + upgrades[upg]["button_tooltip"] + '</span></button>';
                     }
                 }
@@ -4313,12 +4313,12 @@ function buyClick(objectName, times){
 
 function upgradeClick(upgradeName, checkCurrency){
     if((player_currency[upgrades[upgradeName]["cost"]] >= upgrades[upgradeName]["cost_amount"]) || (checkCurrency === false)){
-        if((checkCurrency === true)) {
+        if(checkCurrency === true) {
             addMutationCounter(upgrades[upgradeName]["cost"], true, timerShort);
         }
         if(upgrades[upgradeName]["current_level"] < upgrades[upgradeName]["max_level"]){
             upgrades[upgradeName]["current_level"] += 1;
-            if((checkCurrency === true)) {
+            if(checkCurrency === true) {
                 player_currency[upgrades[upgradeName]["cost"]] -= upgrades[upgradeName]["cost_amount"];
             }
             upgrades[upgradeName]["cost_amount"] = upgrades[upgradeName]["cost_amount"] + (upgrades[upgradeName]["cost_amount_base"] * (Math.pow((upgrades[upgradeName]["current_level"]),upgrades[upgradeName]["cost_level_increment_power"])));
