@@ -1,9 +1,9 @@
-var versioning = {"version":"1.3","build":15,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"1.4","build":16,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
     "food"          : 0,
-    "housing"       : 0,
+    "housing"       : 500,
     "wood"          : 0,
     "metal"         : 0,
     "gold"          : 0,
@@ -3584,7 +3584,7 @@ var upgrades= {
         "max_level":1},
     "enable_hacker":{
         "name":"Learn black hat hacking",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"These hackers can provide a steady income and a small but significant intelligence boost. They eat a lot though.",
         "button_placement":"object_clandestineoperations",
         "available":true,
         "affected_object":"object_blackhathacker",
@@ -3600,13 +3600,13 @@ var upgrades= {
         "max_level":1},
     "use_quantum_tech":{
         "name":"Use Quantum technology",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Encryption will be a running gag after this upgrade. Allows insanely fast money income streams",
         "button_placement":"object_blackhathacker",
         "available":true,
         "affected_object":"object_blackhathacker",
         "add_type":"adds_tick_money",
         "add_amount":99.2,
-        "set_type":"visible",
+        "set_type":"none",
         "set_amount":true,
         "cost":"intelligence",
         "cost_amount_base":400000000,
@@ -3616,7 +3616,7 @@ var upgrades= {
         "max_level":1},
     "enforce_better_deal":{
         "name":"Enforce better deal",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"With the right tools, you can achieve almost anything. In this situation, you will need the power of the army to aid your goals.",
         "button_placement":"object_humantrafficking",
         "available":true,
         "affected_object":"object_humantrafficking",
@@ -3632,7 +3632,7 @@ var upgrades= {
         "max_level":5},
     "enable_tankfactories":{
         "name":"Open Tank factory",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Allows for the construction of tanks. Tanks are costly, but in the long run, they generate a serious firepower boost.",
         "button_placement":"object_headquarters",
         "available":true,
         "affected_object":"object_tankfactory",
@@ -3648,7 +3648,7 @@ var upgrades= {
         "max_level":1},
     "enable_mainbattletank":{
         "name":"Research Main battle tank",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"General purpose tank. Costs and firepower gain are somewhat balanced.",
         "button_placement":"object_tankfactory",
         "available":true,
         "affected_object":"object_mainbattletank",
@@ -3664,7 +3664,7 @@ var upgrades= {
         "max_level":1},
     "enable_howitzer":{
         "name":"Research Howitzer",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Howitzers can drop a payload over the enemy walls, without them seeing it coming. Not strange the firepower boost of howitzers is massive.",
         "button_placement":"object_tankfactory",
         "available":true,
         "affected_object":"object_howitzer",
@@ -3680,7 +3680,7 @@ var upgrades= {
         "max_level":1},
     "nuclear_shells":{
         "name":"Load nuclear shells",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Loading nukes will, but the firepower gain is adequate.",
         "button_placement":"object_howitzer",
         "available":true,
         "affected_object":"object_howitzer",
@@ -3696,7 +3696,7 @@ var upgrades= {
         "max_level":1},
     "enable_icbmlauncher":{
         "name":"Research Mobile ICBM launcher",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Death on wheels... or tracks... well... Does it matter if you're dead? Because that is what this launcher is for: Instant creation of filled mass graves. Tons and tons of firepower, guaranteed!",
         "button_placement":"object_tankfactory",
         "available":true,
         "affected_object":"object_icbmlauncher",
@@ -3712,7 +3712,7 @@ var upgrades= {
         "max_level":1},
     "load_mirvwarheads":{
         "name":"Load MIRV Warheads",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Can it be worse? Creation of MULTIPLE mass graves simultaneously? Firepower paradise.",
         "button_placement":"object_icbmlauncher",
         "available":true,
         "affected_object":"object_icbmlauncher",
@@ -3728,7 +3728,7 @@ var upgrades= {
         "max_level":1},
     "enable_roboticsfactory":{
         "name":"Open Robotics factory",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Robots are the future. Well... Sentinells and T9000's doesn't sound like a bright future, but hell, it is a future.",
         "button_placement":"object_headquarters",
         "available":true,
         "affected_object":"object_roboticsfactory",
@@ -3744,7 +3744,7 @@ var upgrades= {
         "max_level":1},
     "enable_supercomputer":{
         "name":"Research Supercomputer",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"With one of these machines, you would not need any scientists any more",
         "button_placement":"object_roboticsfactory",
         "available":true,
         "affected_object":"object_supercomputer",
@@ -3760,7 +3760,7 @@ var upgrades= {
         "max_level":1},
     "enable_quantumcomputer":{
         "name":"Develop Quantum computer",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"With one of these machines, you would not need any super computers any more",
         "button_placement":"object_roboticsfactory",
         "available":true,
         "affected_object":"object_quantumcomputer",
@@ -3776,7 +3776,7 @@ var upgrades= {
         "max_level":1},
     "install_1024_core_cpu":{
         "name":"Install 1024-core processors",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Not quite your general octacore CPU. Boosts the intelligence gain vastly against a slightly increased money withdrawal.",
         "button_placement":"object_supercomputer",
         "available":true,
         "affected_object":"object_supercomputer",
@@ -3792,7 +3792,7 @@ var upgrades= {
         "max_level":1},
     "install_fusion_laser_cpu":{
         "name":"Install Laser-fusion processors",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"I'm not sure if 'Laser-fusion' even exists, I've just made it up. But why would you care? Intelligence gain: Overwhelming.",
         "button_placement":"object_quantumcomputer",
         "available":true,
         "affected_object":"object_quantumcomputer",
@@ -3808,7 +3808,7 @@ var upgrades= {
         "max_level":1},
     "enable_3dprinter":{
         "name":"Research Industrial 3D printer",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"These 3D printers can turn plastics into products and sell these products for money. It might be handy to have a few of these up and running.",
         "button_placement":"object_roboticsfactory",
         "available":true,
         "affected_object":"object_3dprinter",
@@ -3824,7 +3824,7 @@ var upgrades= {
         "max_level":1},
     "install_bigger_nozzles":{
         "name":"Install bigger nozzles",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Faster production means faster money.",
         "button_placement":"object_3dprinter",
         "available":true,
         "affected_object":"object_3dprinter",
@@ -3840,7 +3840,7 @@ var upgrades= {
         "max_level":2},
     "install_world_government":{
         "name":"Install World Government",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"You will own the world. 8 billion slaves at your disposal. But by the time you will be able to afford this installment, it might be 9 or 10 billion.",
         "button_placement":"object_worldgovernment",
         "available":true,
         "affected_object":"object_worldgovernment",
@@ -3856,13 +3856,11 @@ var upgrades= {
         "max_level":1}
 };
 
-
-var currentHousing = 0;
+var saveFile = {"versioning":versioning,"currency":{},"objects":{},"upgrades":{},"autobuy":{}}
 var lastBoughtObject = "none";
 var gameIntervalTimer = 100;
 var autobuyer = {"object":"none","rate":1,"counter_set":9,"counter_value":0,"simultanous_buys":10};
 var autoSaveCounter = 0;
-var housingAdded = 0;
 var mutationCounter = {};
 var timerLong = 10;
 var timerShort = 5;
@@ -3880,47 +3878,51 @@ function abortTimer() {
 
 
 function loadWebstorage(){
-    var saveFile = btoa(JSON.stringify({"versioning":versioning,"upgrades":upgrades,"objects":objects,"currency":player_currency,"autobuy":autobuyer}));
     if (typeof(Storage) !== "undefined") {
         if (localStorage.getItem("cannonfodder_savegame") === null) {
-            localStorage.setItem("cannonfodder_savegame", saveFile);
+            localStorage.setItem("cannonfodder_savegame", btoa(JSON.stringify(saveFile)));
         }
         else{
             var loadedFile = JSON.parse(atob(localStorage.getItem("cannonfodder_savegame")));
             //console.log(loadedFile);
             if (typeof(loadedFile["versioning"]) !== "undefined") {
-                if (loadedFile["versioning"]["version"] === versioning["version"]) {
-                    upgrades = loadedFile["upgrades"];
-                    objects = loadedFile["objects"];
-                    player_currency = loadedFile["currency"];
-                    autobuyer = loadedFile["autobuy"];
-                    updateHousingInit();
+                if(parseFloat(loadedFile["versioning"]["version"]) < 1.4 ){
+                    saveFile["versioning"] = versioning;
+                    localStorage.setItem("cannonfodder_savegame", btoa(JSON.stringify(saveFile)));
+                    console.log("Old version (<1.4) detected. Resetting...");
+                    return;
                 }
-                else {
-                    console.log("New version detected - Only saved currency has reloaded");
-                    for (var cur in player_currency) {
-                        if (player_currency.hasOwnProperty(cur)) {
-                            player_currency[cur] = loadedFile["currency"][cur] || 0;
+                for (var cur in loadedFile["currency"]) {
+                    if (loadedFile["currency"].hasOwnProperty(cur)) {
+                        player_currency[cur] = loadedFile["currency"][cur] || 0;
+                        modifySaveFile("currency", cur, player_currency[cur]);
+                    }
+                }
+                for (var obj in loadedFile["objects"]) {
+                    if (loadedFile["objects"].hasOwnProperty(obj)) {
+                        objects[obj]["owned"] = loadedFile["objects"][obj]["owned"] || 0;
+                        modifySaveFile("objects", obj, objects[obj]["owned"]);
+                    }
+                }
+                for (var upg in loadedFile["upgrades"]) {
+                    if (loadedFile["upgrades"].hasOwnProperty(upg)) {
+                        if(upg in upgrades) {
+                            var counter = 0;
+                            while (counter < loadedFile["upgrades"][upg]["current_level"]) {
+                                upgradeClick(upg, false);
+                                counter += 1;
+                            }
+                            modifySaveFile("upgrades", upg, upgrades[upg]["current_level"]);
                         }
                     }
-                    objects["object_peasant"]["owned"] = loadedFile["objects"]["object_peasant"]["owned"];
-                    objects["object_house"]["owned"] = loadedFile["objects"]["object_house"]["owned"];
-                    objects["object_mansion"]["owned"] = loadedFile["objects"]["object_mansion"]["owned"];
-                    objects["object_cityhall"]["owned"] = loadedFile["objects"]["object_cityhall"]["owned"];
-                    objects["object_senate"]["owned"] = loadedFile["objects"]["object_senate"]["owned"] || 0;
-                    objects["object_worldforum"]["owned"] = loadedFile["objects"]["object_worldforum"]["owned"] || 0;
-                    objects["object_worldgovernment"]["owned"] = loadedFile["objects"]["object_worldgovernment"]["owned"] || 0;
-                    saveFile = btoa(JSON.stringify({"versioning":versioning,"upgrades":upgrades,"objects":objects,"currency":player_currency,"autobuy":autobuyer}));
-                    localStorage.setItem("cannonfodder_savegame", saveFile);
-                    window.location.reload(true);
                 }
             }
             else{
-                localStorage.setItem("cannonfodder_savegame", saveFile);
-                window.location.reload(true);
+                console.log("Cannot load game save file: no version data detected.");
             }
         }
     } else {
+        console.log("Cannot initialise game save file: cannonfodder_savegame");
         // No webstorage
     }
 }
@@ -3966,7 +3968,7 @@ function buildupGameScreen(){
                 if (upgrades.hasOwnProperty(upg)) {
                     if(upgrades[upg]["button_placement"] === obj){
                         Y = getUpgradeButtonText(upg);
-                        X += '<button onclick="upgradeClick(\'' + upg + '\')" class="button upgrade tooltip" id="upgrade_' + upg + '">' + Y + '' +
+                        X += '<button onclick="upgradeClick(\'' + upg + '\',\'true\')" class="button upgrade tooltip" id="upgrade_' + upg + '">' + Y + '' +
                             '<span class="tooltiptext">' + upgrades[upg]["button_tooltip"] + '</span></button>';
                     }
                 }
@@ -3992,9 +3994,7 @@ function buildupGameScreen(){
 //
 
 function gameLoop() {
-    updateHousing();           //Housing only
     updateCurrencyTicks();
-    getCurrentHousing();
     triggerAutobuy();
     updateBuildingDependencies();
     updateObjectAmounts();
@@ -4005,31 +4005,7 @@ function gameLoop() {
 }
 
 
-function updateHousing(){
-    player_currency["housing"] -= housingAdded;
-    housingAdded = 0;
-    for (var objectName in objects){
-        if (objects.hasOwnProperty(objectName)) {
-            if ((objects[objectName]["adds_housing"]) > 0 && (objects[objectName]["owned"] > 0)) {
-                housingAdded += objects[objectName]["adds_housing"] * objects[objectName]["owned"];
-            }
-        }
-    }
-    player_currency["housing"] += housingAdded;
-}
 
-
-function updateHousingInit(){
-    housingAdded = 0;
-    for (var objectName in objects){
-        if (objects.hasOwnProperty(objectName)) {
-            if ((objects[objectName]["adds_housing"]) > 0 && (objects[objectName]["owned"] > 0)) {
-                housingAdded += objects[objectName]["adds_housing"] * objects[objectName]["owned"];
-            }
-        }
-    }
-    player_currency["housing"] = housingAdded;
-}
 
 
 function updateCurrencyTicks(){
@@ -4101,12 +4077,9 @@ function updateCurrency(){
     for (var key in player_currency){
         if (player_currency.hasOwnProperty(key)) {
             player_currency[key] += currency_per_tick[key];
-            if(key === "housing"){
-                $("#currency_" + key).html(formatCurrencyValues(currentHousing)+"/"+formatCurrencyValues(player_currency[key]));
-            }
-            else {
-                $("#currency_" + key).html(formatCurrencyValues(player_currency[key]));
-            }
+            modifySaveFile("currency", key, player_currency[key]);
+            $("#currency_" + key).html(formatCurrencyValues(player_currency[key]));
+
             var tickIndicator = "#tick_indicator_" + key;
             if(delta_per_tick[key] > 0) {
                 if( $( tickIndicator ).hasClass("tick_negative") || $( tickIndicator ).hasClass("tick_neutral")) {
@@ -4210,7 +4183,7 @@ function updateObjectBuildcost(){
                         }
                         if(key === "housing") {
                             if(objects[objectName]["consumes"] !== "none") {
-                                if ((objects[objectName]["housing"] - objects[objects[objectName]["consumes"]]["housing"]) > (player_currency["housing"] - currentHousing)) {
+                                if ((objects[objectName]["housing"] - objects[objects[objectName]["consumes"]]["housing"]) > (player_currency["housing"])) {
                                     $("#buildcost_" + objectName).append(costValueToDisplay + " " + player_currency_names[key] + "<br />");
                                 }
                                 else{
@@ -4218,7 +4191,7 @@ function updateObjectBuildcost(){
                                 }
                             }
                             else {
-                                if (objects[objectName]["housing"] > (player_currency["housing"] - currentHousing)) {
+                                if (objects[objectName]["housing"] > (player_currency["housing"])) {
                                     $("#buildcost_" + objectName).append(costValueToDisplay + " " + player_currency_names[key] + "<br />");
                                 }
                                 else{
@@ -4285,42 +4258,32 @@ function updateObjectBuildcost(){
 }
 
 
-function getCurrentHousing(){
-    currentHousing = 0;
-    for (var objectName in objects){
-        if (objects.hasOwnProperty(objectName)) {
-            if ((objects[objectName]["owned"] > 0) && (objects[objectName]["housing"] > 0)) {
-                currentHousing += objects[objectName]["housing"] * objects[objectName]["owned"];
-                if (Math.trunc(currentHousing) > Math.trunc(player_currency["housing"])){
-                    player_currency["housing"] = Math.trunc(currentHousing);
-                }
-            }
-        }
-    }
-}
 
 
 function buyClick(objectName, times){
     for(var i=0; i < times; i++) {
-        getCurrentHousing();
         for (var key in player_currency) {
             if (player_currency.hasOwnProperty(key)) {
                 if (objects[objectName][key] > player_currency[key]) {
                     addMutationCounter(key, false, timerLong);
+                    modifySaveFile("objects", objectName, objects[objectName]["owned"]);
                     return;
                 }
                 if (objects[objectName]["consumes"] !== "none") {
                     if (objects[objects[objectName]["consumes"]]["owned"] < 1) {
+                        modifySaveFile("objects", objectName, objects[objectName]["owned"]);
                         return;
                     }
-                    if ((objects[objectName]["housing"] - objects[objects[objectName]["consumes"]]["housing"]) > (player_currency["housing"] - currentHousing)) {
+                    if ((objects[objectName]["housing"] - objects[objects[objectName]["consumes"]]["housing"]) > (player_currency["housing"])) {
                         addMutationCounter("housing", false, timerLong);
+                        modifySaveFile("objects", objectName, objects[objectName]["owned"]);
                         return;
                     }
                 }
                 else {
-                    if (objects[objectName]["housing"] > (player_currency["housing"] - currentHousing)) {
+                    if (objects[objectName]["housing"] > (player_currency["housing"])) {
                         addMutationCounter("housing", false, timerLong);
+                        modifySaveFile("objects", objectName, objects[objectName]["owned"]);
                         return;
                     }
                 }
@@ -4332,10 +4295,8 @@ function buyClick(objectName, times){
         for (var k in player_currency) {
             if (player_currency.hasOwnProperty(k)) {
                 if ((objects[objectName][k] > 0) || (objects[objectName]['adds_' + k] > 0)) {
-                    if (k !== "housing") {
-                        player_currency[k] -= objects[objectName][k];
-                        player_currency[k] += objects[objectName]['adds_' + k];
-                    }
+                    player_currency[k] -= objects[objectName][k];
+                    player_currency[k] += objects[objectName]['adds_' + k];
                 }
             }
         }
@@ -4346,15 +4307,20 @@ function buyClick(objectName, times){
         }
         setAdaptiveBuildPrices();
     }
+    modifySaveFile("objects", objectName, objects[objectName]["owned"]);
 }
 
 
-function upgradeClick(upgradeName){
-    if(player_currency[upgrades[upgradeName]["cost"]] >= upgrades[upgradeName]["cost_amount"]){
-        addMutationCounter(upgrades[upgradeName]["cost"], true, timerShort);
+function upgradeClick(upgradeName, checkCurrency){
+    if((player_currency[upgrades[upgradeName]["cost"]] >= upgrades[upgradeName]["cost_amount"]) || (checkCurrency === false)){
+        if((checkCurrency === true)) {
+            addMutationCounter(upgrades[upgradeName]["cost"], true, timerShort);
+        }
         if(upgrades[upgradeName]["current_level"] < upgrades[upgradeName]["max_level"]){
             upgrades[upgradeName]["current_level"] += 1;
-            player_currency[upgrades[upgradeName]["cost"]] -= upgrades[upgradeName]["cost_amount"];
+            if((checkCurrency === true)) {
+                player_currency[upgrades[upgradeName]["cost"]] -= upgrades[upgradeName]["cost_amount"];
+            }
             upgrades[upgradeName]["cost_amount"] = upgrades[upgradeName]["cost_amount"] + (upgrades[upgradeName]["cost_amount_base"] * (Math.pow((upgrades[upgradeName]["current_level"]),upgrades[upgradeName]["cost_level_increment_power"])));
             //process effects
             if(upgrades[upgradeName]["add_type"] !== "none") {
@@ -4366,14 +4332,14 @@ function upgradeClick(upgradeName){
             //update button
             X = getUpgradeButtonText(upgradeName);
             $( '#upgrade_' + upgradeName ).html(X);
-
+            modifySaveFile("upgrades", upgradeName, upgrades[upgradeName]["current_level"]);
         }
-
     }
     else{
         addMutationCounter(upgrades[upgradeName]["cost"], false, timerLong);
     }
 }
+
 
 
 function autoBuyClick(objectName){
@@ -4430,13 +4396,29 @@ function checkMutationCounters(){
     }
 }
 
+function modifySaveFile(group, obj, amount){
+    if(group === "objects") {
+        saveFile[group][obj] = {};
+        saveFile[group][obj]["owned"] = amount;
+    }
+    if(group === "upgrades"){
+        saveFile[group][obj] = {};
+        saveFile[group][obj]["current_level"] = amount;
+    }
+    if(group === "currency"){
+        saveFile[group][obj] = amount;
+    }
+    if(group === "autobuy"){
+        saveFile[group][obj] = amount;
+    }
+}
+
 
 function autoSaveWebStorage() {
     if (autoSaveCounter > 150) {    //every 15 seconds
         autoSaveCounter = 0;
-        var saveFile = btoa(JSON.stringify({"versioning":versioning,"upgrades": upgrades, "objects": objects, "currency":player_currency,"autobuy":autobuyer}));
         if (typeof(Storage) !== "undefined") {
-            localStorage.setItem("cannonfodder_savegame", saveFile);
+            localStorage.setItem("cannonfodder_savegame", btoa(JSON.stringify(saveFile)));
         }
     }
     else{
@@ -4468,54 +4450,55 @@ function formatCurrencyValues(value){
     var decA = 0;
     var decB = 1;
     var decC = 2;
-    if((value < 1000) && (value % 1 === 0)){
+    var vlueAbs = Math.abs(value);
+    if((vlueAbs < 1000) && (vlueAbs % 1 === 0)){
         decB = 0;
         decC = 0;
     }
-    else if((value < 1000000) && ((value/1000) % 1 === 0)){
+    else if((vlueAbs < 1000000) && ((vlueAbs/1000) % 1 === 0)){
         decB = 0;
         decC = 0;
     }
-    else if((value < 1000000000) && ((value/1000000) % 1 === 0)){
+    else if((vlueAbs < 1000000000) && ((vlueAbs/1000000) % 1 === 0)){
         decB = 0;
         decC = 0;
     }
-    else if(value > 99999999999){
+    else if(vlueAbs > 99999999999){
         decB = 0;
         decC = 0;
     }
-    if (value > 99999999999){
-        returnValue = (value/1000000000).toFixed(decA) + "B";
+    if (vlueAbs > 99999999999){
+        returnValue = (vlueAbs/1000000000).toFixed(decA) + "B";
     }
-    else if (value > 9999999999){
-        returnValue = (value/1000000000).toFixed(decB) + "B";
+    else if (vlueAbs > 9999999999){
+        returnValue = (vlueAbs/1000000000).toFixed(decB) + "B";
     }
-    else if (value > 999999999){
-        returnValue = (value/1000000000).toFixed(decC) + "B";
+    else if (vlueAbs > 999999999){
+        returnValue = (vlueAbs/1000000000).toFixed(decC) + "B";
     }
-    else if (value > 99999999){
-        returnValue = (value/1000000).toFixed(decA) + "M";
+    else if (vlueAbs > 99999999){
+        returnValue = (vlueAbs/1000000).toFixed(decA) + "M";
     }
-    else if (value > 9999999){
-        returnValue = (value/1000000).toFixed(decB) + "M";
+    else if (vlueAbs > 9999999){
+        returnValue = (vlueAbs/1000000).toFixed(decB) + "M";
     }
-    else if (value > 999999){
-        returnValue = (value/1000000).toFixed(decC) + "M";
+    else if (vlueAbs > 999999){
+        returnValue = (vlueAbs/1000000).toFixed(decC) + "M";
     }
-    else if (value > 99999){
-        returnValue = (value/1000).toFixed(decA) + "K";
+    else if (vlueAbs > 99999){
+        returnValue = (vlueAbs/1000).toFixed(decA) + "K";
     }
-    else if (value > 9999){
-        returnValue = (value/1000).toFixed(decB) + "K";
+    else if (vlueAbs > 9999){
+        returnValue = (vlueAbs/1000).toFixed(decB) + "K";
     }
-    else if (value > 999){
-        returnValue = (value/1000).toFixed(decC) + "K";
+    else if (vlueAbs > 999){
+        returnValue = (vlueAbs/1000).toFixed(decC) + "K";
     }
-    else if (value > 99){
-        return value.toFixed(decB);
+    else if (vlueAbs > 99){
+        return vlueAbs.toFixed(decB);
     }
     else{
-        return value.toFixed(decC);
+        return vlueAbs.toFixed(decC);
     }
     return returnValue;
 

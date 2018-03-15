@@ -588,7 +588,7 @@ textarea {
     min-width: 120px;
 }
 
-.tooltiptext:hover{
+.tooltiptext:hover .tooltip{
     visibility: hidden;
     width: 0%;
     min-width: 0px;
