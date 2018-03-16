@@ -1,4 +1,4 @@
-var versioning = {"version":"1.4","build":16,"contact":"alexander@gm7.nl"};
+var versioning = {"version":"1.4","build":17,"contact":"alexander@gm7.nl"};
 
 var player_currency = {
     "money"         : 0,
@@ -1531,7 +1531,7 @@ var objects = {"object_headquarters": {
         "cost_per_tick_oil": 0,
         "cost_per_tick_electronics": 0,
         "cost_per_tick_intelligence": 0,
-        "cost_per_tick_moral": 0.001,
+        "cost_per_tick_moral": 0.003,
         "cost_per_tick_firepower":0,
         "adds_money": 0,
         "adds_food": 0,
@@ -2832,7 +2832,7 @@ var upgrades= {
         "max_level":1},
     "route_pipes_trough_population":{
         "name":"Route pipes through villages",
-        "button_tooltip":"Tooltip",
+        "button_tooltip":"Can you imagine a production pipe line is leaking and spilling all over the drink water supply of those poor civilians? Nope, me neither. Just close your eyes and build those pipes.",
         "button_placement":"object_oilwell",
         "available":true,
         "affected_object":"object_oilwell",
@@ -3168,14 +3168,14 @@ var upgrades= {
         "max_level":1},
     "sell_cdo_tranches":{
         "name":"Sell risky CDO tranches",
-        "button_tooltip":"The three-letter-abbreviation that caused of a lot of trouble. Caused a lot of pockets being filled. Yours.",
+        "button_tooltip":"The three-letter-abbreviation that caused of a lot of trouble. Caused a lot of pockets being filled. Yours. Be careful with the high recurring moral costs.",
         "button_placement":"object_banker",
         "available":true,
         "affected_object":"object_banker",
         "add_type":"adds_tick_money",
-        "add_amount":876.5,
+        "add_amount":1276.5,
         "set_type":"cost_per_tick_moral",
-        "set_amount":0.1,
+        "set_amount":0.35,
         "cost":"moral",
         "cost_amount_base":15000000,
         "cost_level_increment_power":1,
@@ -3189,13 +3189,13 @@ var upgrades= {
         "available":true,
         "affected_object":"object_banker",
         "add_type":"adds_tick_money",
-        "add_amount":10000,
+        "add_amount":9500,
         "set_type":"none",
         "set_amount":0,
         "cost":"moral",
-        "cost_amount_base":2500000000,
+        "cost_amount_base":4500000000,
         "cost_level_increment_power":1,
-        "cost_amount":2500000000,
+        "cost_amount":4500000000,
         "current_level":0,
         "max_level":1},
     "teach_civilservice":{
@@ -3241,9 +3241,9 @@ var upgrades= {
         "set_type":"cost_per_tick_money",
         "set_amount":2.5,
         "cost":"food",
-        "cost_amount_base":2000000000,
+        "cost_amount_base":2200000000,
         "cost_level_increment_power":3,
-        "cost_amount":2000000000,
+        "cost_amount":2200000000,
         "current_level":0,
         "max_level":1},
     "increase_taxes":{
@@ -3253,12 +3253,12 @@ var upgrades= {
         "available":true,
         "affected_object":"object_peasant",
         "add_type":"adds_tick_money",
-        "add_amount":0.004,
+        "add_amount":0.005,
         "set_type":"none",
         "set_amount":false,
         "cost":"moral",
         "cost_amount_base":1500,
-        "cost_level_increment_power":2.4,
+        "cost_level_increment_power":2.2,
         "cost_amount":1500,
         "current_level":0,
         "max_level":500},
@@ -3360,7 +3360,7 @@ var upgrades= {
         "max_level":1},
     "enable_barracks":{
         "name":"Open Barracks",
-        "button_tooltip":"Barracks",
+        "button_tooltip":"Open this compound to train your cannon fodder.",
         "button_placement":"object_headquarters",
         "available":true,
         "affected_object":"object_barracks",
@@ -3728,7 +3728,7 @@ var upgrades= {
         "max_level":1},
     "enable_roboticsfactory":{
         "name":"Open Robotics factory",
-        "button_tooltip":"Robots are the future. Well... Sentinells and T9000's doesn't sound like a bright future, but hell, it is a future.",
+        "button_tooltip":"Robots are the future. Well... Sentinells and T900's doesn't sound like a bright future, but hell, it is a future.",
         "button_placement":"object_headquarters",
         "available":true,
         "affected_object":"object_roboticsfactory",
@@ -3856,7 +3856,8 @@ var upgrades= {
         "max_level":1}
 };
 
-var saveFile = {"versioning":versioning,"currency":{},"objects":{},"upgrades":{},"autobuy":{}}
+
+var saveFile = {"versioning":versioning,"currency":{},"objects":{},"upgrades":{},"autobuy":{}};
 var lastBoughtObject = "none";
 var gameIntervalTimer = 100;
 var autobuyer = {"object":"none","rate":1,"counter_set":9,"counter_value":0,"simultanous_buys":10};
@@ -3864,7 +3865,23 @@ var autoSaveCounter = 0;
 var mutationCounter = {};
 var timerLong = 10;
 var timerShort = 5;
+var textAutoBuyer = "Click to toggle the autobuyer. Only 1 autobuyer can be active at any given time.";
 
+
+$( function() {
+    $( document ).tooltip({
+        position: {
+            my: "center top",
+            at: "center bottom+5"
+        },
+        show: {
+            duration: "fast"
+        },
+        hide: {
+            effect: "hide"
+        }
+    });
+} );
 
 
 loadWebstorage();
@@ -3931,10 +3948,10 @@ function loadWebstorage(){
 function buildupGameScreen(){
     var X = "";
     var Y = "";
-    X += '<div class="currencies">';
+    X += '<div id="currencies" class="currencies">';
     for (var cur in player_currency) {
         if (player_currency.hasOwnProperty(cur)) {
-            X += '<div class="currency_title" id="currency_title_' + cur + '">' + player_currency_names[cur] + '<div class="currency" id="currency_' + cur + '">0</div>' +
+            X += '<div title="' + cur + '" class="currency_title" id="currency_title_' + cur + '">' + player_currency_names[cur] + '<div class="currency" id="currency_' + cur + '">0</div>' +
                 '<div class="currency_tick" id="delta_currency_' + cur + '">' +
                 '<div id="tick_indicator_' + cur + '" class="tick_indicator tick_neutral"></div>' +
                 '<span class="delta_currency_amount" id="delta_currency_amount_' + cur + '" class="">#</span>' +
@@ -3962,14 +3979,13 @@ function buildupGameScreen(){
                     '<button onclick="buyClick(\'' + obj + '\',\'100\')" class="button buy" id="buy_' + obj + '">x100</button>' +
                     '<button onclick="buyClick(\'' + obj + '\',\'500\')" class="button buy" id="buy_' + obj + '">x500</button>' +
                     '<button onclick="buyClick(\'' + obj + '\',\'1000\')" class="button buy" id="buy_' + obj + '">x1000</button>' +
-                    '<button onclick="autoBuyClick(\'' + obj + '\')" class="button autobuy" id="autobuy_' + obj + '">Automatic</button>';
+                    '<button title="' + textAutoBuyer + '" onclick="autoBuyClick(\'' + obj + '\')" class="button autobuy" id="autobuy_' + obj + '">Automatic</button>';
             }
             for (var upg in upgrades) {
                 if (upgrades.hasOwnProperty(upg)) {
                     if(upgrades[upg]["button_placement"] === obj){
                         Y = getUpgradeButtonText(upg);
-                        X += '<button onclick="upgradeClick(\'' + upg + '\',true)" class="button upgrade tooltip" id="upgrade_' + upg + '">' + Y + '' +
-                            '<span class="tooltiptext">' + upgrades[upg]["button_tooltip"] + '</span></button>';
+                        X += '<button onclick="upgradeClick(\'' + upg + '\',true)" title="' + upgrades[upg]["button_tooltip"] + '" class="button upgrade tooltip" id="upgrade_' + upg + '">' + Y + '</button>';
                     }
                 }
             }
@@ -4001,6 +4017,7 @@ function gameLoop() {
     updateObjectBuildcost();
     setAdaptiveBuildPrices();
     checkMutationCounters();
+    setAdaptiveContentHeight();
     autoSaveWebStorage();       //last item
 }
 
@@ -4394,6 +4411,10 @@ function checkMutationCounters(){
             }
         }
     }
+}
+
+function setAdaptiveContentHeight() {
+   $( '.game_screen' ).css("margin-top", ($('#currencies').height() + "px"));
 }
 
 function modifySaveFile(group, obj, amount){

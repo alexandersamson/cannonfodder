@@ -18,7 +18,8 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css?V1.4_build16">
+        <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.css">
+        <link rel="stylesheet" href="css/main.css?V1.4_build17">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -29,9 +30,10 @@
         <div class="wrappywrapper"><div class="game_screen" id="game_screen"></div></div>
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="js/jquery-3.3.1.min/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min/jquery-3.3.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js?V1.4_build16 "></script>
+        <script src="js/main.js?V1.4_build17 "></script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
