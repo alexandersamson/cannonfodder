@@ -19,7 +19,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.css">
-        <link rel="stylesheet" href="css/main.css?V1.4_build17">
+        <link rel="stylesheet" href="css/main.css?V1.4_build18">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -33,7 +33,7 @@
         <script src="js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min/jquery-3.3.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js?V1.4_build17 "></script>
+        <script src="js/main.js?V1.4_build18 "></script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
